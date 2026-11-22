@@ -20,7 +20,10 @@ locali. Verifiche layout desktop e mobile390px senza overflow, link leggibili.
 Azure non attivato per verifica carta; nessuna risorsa cloud Azure creata.
 GitHub Pages usato per la presentazione, senza inferenze cloud.380 test passati,
 uno escluso,pip/Ruff puliti. Nessuna nuova inferenza o fit. Resoconto:
-docs/portfolio_site_update_20261122.html/.json. Release finale ancora da chiudere.
+docs/portfolio_site_update_20261122.html/.json. CI commit65949e7 superata:
+https://github.com/FoggettiAntonello/SolarWindCast/actions/runs/45048301632
+PDF pubblico verificato visivamente alla pagina13; server locale arrestato.
+Release finale ancora da chiudere.
 
 
 22 novembre: primo push pubblico concluso (c22d2be), clone GitHub verificato:

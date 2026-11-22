@@ -40,5 +40,12 @@
   "new_inferences": 0,
   "new_fits": 0,
   "azure_deployed": false,
-  "release_finalized": false
+  "release_finalized": false,
+  "updated_project_ci": {
+    "commit": "65949e71cf41d9a7d045d11d428d57609daa084f",
+    "url": "https://github.com/FoggettiAntonello/SolarWindCast/actions/runs/45048301632",
+    "conclusion": "success"
+  },
+  "public_pdf_visual_review": true,
+  "local_preview_server_stopped": true
 }
