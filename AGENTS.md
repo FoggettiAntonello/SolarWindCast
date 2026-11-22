@@ -83,6 +83,22 @@ contano più di risultati spettacolari.
 
 ## Metodo di lavoro
 
+22 novembre: revisione README richiesta dall’utente come base precisa per un
+futuro post LinkedIn. README remoto confrontato con quello locale prima delle
+modifiche. Documentate11dipendenze dirette,6opzionali,2transitive dei checkpoint,
+revisioni Timestral5M/28M,strumenti di test/build/Office e pubblicazione.
+Versioni controllate tramite metadati installati,TOML e vincoli; ruoli verificati
+su codice/test. Corretta vecchia frase sul setup CPU: CI da Internet già passato.
+Distinti sklearn per verifica metriche,LightGBM/Jupyter opzionali,Open-Meteo
+predisposto ma escluso dai risultati,CPU degli esperimenti/CUDA disponibile,
+zero fine tuning reale,GitHub Pages statico e Azure non attivato.
+Nessun nuovo esperimento,fit,download o modifica delle dipendenze; sezione
+risultati e metrics.json intatti. Link relativi README tutti validi; audit
+pubblico superato. Suite completa non ripetuta per sola documentazione.
+Resoconto docs/readme_review_20261122.html/.json. Nessun post LinkedIn scritto
+o pubblicato. Release finale v1 ancora da chiudere.
+
+
 22 novembre, successiva richiesta esplicita: slide autore spostata dalla
 posizione13 alla1 e foto fornita dall’utente incorporata senza ritagli né
 deformazioni.13slide totali,12scientifiche nello stesso ordine.9grafici e

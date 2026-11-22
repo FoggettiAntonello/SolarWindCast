@@ -66,10 +66,35 @@ Per la variante sintetica con Timestral togliere `--baselines-only`: servono
 pesi 5M già in cache, non scaricati automaticamente dalla demo.
 
 [Setup da zero e scelta CPU/CUDA](docs/setup.md). Il collaudo del 21 novembre
-usa una nuova venv Windows/Python 3.12, dipendenze reinstallate da wheel locali
-e PyTorch cu128. Importazione fuori dal repository e demo installata riuscite.
-La variante CPU e il recupero completo da Internet non sono stati ripetuti.
-[Dettagli del collaudo](docs/release_setup_validation.html).
+ha usato una nuova venv Windows/Python 3.12.10, dipendenze reinstallate da
+wheel locali e PyTorch cu128. Il 22 novembre anche il percorso **CPU con
+installazione da Internet** ha superato test, demo e audit su GitHub Actions.
+[Collaudo locale](docs/release_setup_validation.html) ·
+[CI del progetto aggiornato](https://github.com/FoggettiAntonello/SolarWindCast/actions/runs/45051464976).
+
+## Pipeline implementata
+
+1. Acquisizione ENTSO-E da CSV manuali o API, conservando risposta originale,
+   provenienza e hash; controllo di copertura, frequenza, duplicati e anomalie.
+2. Dataset interno con timestamp UTC, target e ruoli delle covariate espliciti.
+   Serie di potenza in MW e aggregati di energia in MWh, senza riempimenti nascosti.
+3. Feature temporali e collegamento a Timestral, con controllo della disponibilità
+   dei dati al momento della previsione e revisioni dei pesi fissate.
+4. Backtest a origini temporali successive: Timestral e baseline condividono
+   finestre e osservazioni valutabili. Le baseline sono implementate nel progetto
+   con NumPy/pandas, senza un servizio di previsione esterno.
+5. Metriche puntuali e probabilistiche, calibrazione basata solo su errori passati,
+   salvataggio di configurazioni, risultati e manifest SHA-256.
+6. Resoconti HTML, grafici e presentazioni; controlli automatici prima della
+   pubblicazione dei soli indicatori aggregati.
+
+I risultati pubblicati usano **Timestral 5M e 28M senza riaddestramento dei pesi**.
+Nel mensile sono state confrontate varianti solo target e con calendario;
+il percorso a 24 ore usa 5M solo target. La calibrazione modifica gli intervalli
+usando errori passati e conserva la mediana. L'audit di fattibilità del fine tuning
+ha calcolato gradienti su dati sintetici, con **zero passi di ottimizzazione**:
+non è stato eseguito fine tuning sui dati reali.
+[Dettagli dell'audit](docs/finetuning_feasibility.md).
 
 ## Come sono valutati gli esperimenti
 
@@ -125,7 +150,102 @@ intervalli talvolta troppo ampi e nessun beneficio economico aziendale misurato.
 Il motivo preciso del vantaggio su alcuni casi non è stato isolato con prove
 che separino tutti i fattori. I benchmark di Mistral non sono risultati locali.
 
-## Struttura e strumenti
+## Strumenti e dipendenze
+
+Le versioni sotto sono quelle fissate nel progetto e verificate nell'ambiente
+di lavoro il 22 novembre 2026, non una lista delle versioni più recenti.
+[pyproject.toml](pyproject.toml) definisce dipendenze dirette e gruppi opzionali;
+[constraints.txt](constraints.txt) vincola anche le dipendenze transitive.
+[requirements.txt](requirements.txt) rimanda a questi file, senza duplicare
+l'elenco. I vincoli non equivalgono a un lock file con hash di tutti i pacchetti.
+
+### Dati, modelli e resoconti
+
+| Dipendenza diretta | Versione fissata | Utilizzo nel codice |
+| --- | --- | --- |
+| Python | Richiesto >=3.12; verificato 3.12.10 | Moduli con type hint e docstring, CLI, pipeline e test. Le altre versioni di Python non sono certificate da questo collaudo. |
+| NumPy | 2.5.4 | Calcolo numerico, baseline, quantili empirici, metriche e dati sintetici. |
+| pandas | 3.1.0 | Serie temporali UTC, lettura CSV, allineamenti, controlli di completezza e aggregazioni MW/MWh. |
+| PyArrow | 26.0.0 | Lettura e scrittura Parquet dei dataset tramite pandas. |
+| PyYAML | 6.0.3 | Lettura della configurazione unica e dei parametri dei protocolli. |
+| entsoe-py | 0.8.1 | Client `EntsoeRawClient` per acquisizioni reali ENTSO-E; parsing e controlli XML nel nostro adattatore. |
+| python-dotenv | 1.2.4 | Lettura locale del token ENTSO-E, senza inserirlo nel codice o nel repository. |
+| requests | 2.34.2 | Client HTTP del modulo Open-Meteo predisposto e testato; quel meteo non entra nei risultati pubblicati. |
+| holidays | 0.107 | Festività italiane nel componente delle feature di calendario; le covariate effettive dipendono dal protocollo. |
+| PyTorch (`torch`) | 2.11.0 | Esecuzione di Timestral; prova separata dei gradienti su dati sintetici. |
+| Timestral | 1.0.0, commit fissato | Previsione probabilistica zero-shot con mediana e 21 quantili, tramite wrapper del progetto. |
+| Matplotlib | 3.11.2 | Grafici dei resoconti su dati reali, confronti previsione/osservazioni e diagnostica degli intervalli. |
+
+**Revisioni Timestral usate:**
+
+- Codice: `a534bdbd244d64f3d9d743f46c7bf6fc330ed4ff`.
+- Pesi 5M: `bdd20cfc15a3fea0e4cb5ccef37f8d3ca7aa335f`.
+- Pesi 28M: `49b26409ac87b5935539a5d8ffe7f397b720db47`.
+
+Il caricamento usa checkpoint locali e controlla versione, revisione e hash.
+Tra le dipendenze transitive di Timestral figurano **huggingface-hub 2.4.0**
+per recupero/cache dei checkpoint e **safetensors 0.8.0** per i pesi.
+Le restanti dipendenze transitive, comprese quelle dei grafici e dei test,
+sono elencate nei vincoli. Non sono tutte librerie chiamate direttamente
+dal nostro codice. Le taglie 123M e 209M non fanno parte dei risultati qui riportati.
+[Wrapper e API utilizzata](docs/timestral.md) ·
+[Timestral ufficiale](https://github.com/mistralai/timestral) ·
+[Scheda 28M](https://huggingface.co/mistralai/Timestral-28M).
+
+Il codice usa anche la libreria standard Python: `argparse` per le CLI,
+`pathlib` per i percorsi, `json` per risultati e manifest, `hashlib` per SHA-256,
+`xml.etree.ElementTree` per XML e `zipfile` per verificare gli archivi Office.
+Questi componenti non richiedono installazioni separate.
+
+### Test, qualità e installazione
+
+| Strumento | Versione/gruppo | Uso effettivo |
+| --- | --- | --- |
+| pytest | 9.2.0, `dev` | Test con dati sintetici, casi noti, anomalie, cutoff temporali e conservazione dei risultati. |
+| Ruff | 0.17.3, `dev` | Controlli statici su import, errori comuni, docstring e annotazioni di tipo configurate. Non è un type checker completo. |
+| scikit-learn | 1.9.1, `dev` | Riferimento indipendente nei test di MAE, RMSE e pinball. Non allena i modelli dei risultati pubblicati. |
+| setuptools | 78.1.0, build | Costruzione del pacchetto Python e installazione delle CLI. |
+| pip | 26.2.2 nel collaudo/CI | Installazione e `pip check` per la compatibilità delle dipendenze. |
+
+La pipeline [GitHub Actions](.github/workflows/ci.yml) usa Windows e
+Python 3.12.10: installa PyTorch CPU da Internet, esegue test, Ruff,
+demo con baseline e audit dei file pubblicabili. Le azioni esterne sono
+fissate a commit. **380 test superati, uno smoke test opzionale con pesi escluso**
+nel [CI verificato](https://github.com/FoggettiAntonello/SolarWindCast/actions/runs/45051464976).
+Il CI non scarica checkpoint e non riesegue i backtest sui dati energetici reali.
+
+L'ambiente di sviluppo è Windows con **VS Code, PowerShell, Git e venv**.
+Git Credential Manager è stato usato per l'accesso GitHub, senza token in chat
+o nei file del progetto. La build locale è `torch 2.11.0+cu128` e la GPU
+rilevata è una RTX 3060 Laptop da circa 6 GiB; gli esperimenti mensili e orari
+qui riportati sono configurati su **CPU**. La presenza di CUDA non dimostra
+un'accelerazione misurata o un training su GPU.
+
+### Fonti, presentazione e pubblicazione
+
+| Servizio/strumento | Ruolo nel progetto |
+| --- | --- |
+| ENTSO-E Transparency Platform | Fonte reale di produzione e carico. CSV manuali e API sono gestiti da adattatori distinti. |
+| Hugging Face | Provenienza dei checkpoint 5M/28M, con revisioni fissate; nessuna inferenza ospitata usata nei risultati. |
+| Open-Meteo | Modulo storico/previsioni con cache e controlli sulla disponibilità temporale. Predisposto e provato, escluso dai confronti pubblicati. |
+| HTML, CSS, SVG e JavaScript | Resoconti e navigazione delle dodici slide HTML, senza server Python per la consultazione. I grafici SVG della presentazione sono generati dal codice del progetto. |
+| Microsoft PowerPoint ed Excel locali | Esportazione tramite COM/PowerShell: grafici e workbook nativi modificabili; PDF esportato da PowerPoint. Office serve solo a rigenerare questi documenti. |
+| GitHub e GitHub Pages | Repository, cronologia, CI e pubblicazione di PDF/PowerPoint sul sito personale. Il sito mostra documenti statici e non esegue Timestral. |
+| Openpolis e imagegen | Mappa amministrativa con attribuzione CC BY 4.0 e sfondo illustrativo generato. La foto autore è stata fornita dall'utente. [Provenienza e diritti](NOTICE.md). |
+
+### Componenti opzionali e attività rinviate
+
+Il gruppo `analysis` dichiara **Jupyter 1.1.1, ipykernel 7.4.0 e LightGBM 4.7.0**.
+Sono presenti nell'ambiente di lavoro, ma non sono necessari per la demo/CI
+e non costituiscono evidenza di un confronto LightGBM: quel confronto è rinviato.
+La pipeline consegnata usa moduli Python e CLI, senza dipendere da un notebook.
+
+Anche Streamlit, altri modelli fondazionali e il fine tuning sui dati reali
+restano fuori dal perimetro pubblicato. Azure Static Web Apps ha un piano
+e un workflow manuale predisposti, ma **nessuna risorsa Azure è stata attivata**.
+AWS, Docker e Kubernetes non sono componenti dell'esecuzione di questa versione.
+
+## Struttura del repository
 
 - [src/solarwindcast/](src/solarwindcast/): adattatori, dati, modelli, baseline,
   backtest, calibrazione e generazione dei resoconti.
@@ -139,9 +259,6 @@ che separino tutti i fattori. I benchmark di Mistral non sono risultati locali.
 [Pulizia finale e motivi delle cartelle conservate](docs/cleanup_20261121.html).
 Prototipi superati e output dimostrativi sono stati rimossi dalle cartelle attive;
 le prove storiche necessarie sono conservate in archivi compressi locali.
-
-Python 3.12, pandas, NumPy, PyTorch, Timestral, pytest e Ruff. Configurazioni
-CPU e CUDA documentate; il percorso rapido di prova usa soltanto baseline.
 
 ## Licenze e stato del rilascio
 
