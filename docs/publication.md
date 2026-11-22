@@ -87,3 +87,7 @@ Fonti ufficiali consultate il 22 novembre 2026:
 - [GitHub: autenticazione](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-authentication-to-github)
 - [Git Credential Manager](https://github.com/git-ecosystem/git-credential-manager)
 - [Azure: configurazione build](https://learn.microsoft.com/en-us/azure/static-web-apps/build-configuration)
+
+## Esito effettivo del 22 novembre
+
+Repository pubblico [FoggettiAntonello/SolarWindCast](https://github.com/FoggettiAntonello/SolarWindCast), licenza MIT approvata. Primo [CI CPU da Internet](https://github.com/FoggettiAntonello/SolarWindCast/actions/runs/45040562965) superato: 380 test passati, uno escluso, demo/audit/sito validi. Anche il clone GitHub supera i controlli. Azure ancora da pubblicare.

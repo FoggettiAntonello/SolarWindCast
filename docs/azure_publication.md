@@ -29,7 +29,8 @@ Usare l'indirizzo fornito da Azure senza acquistare un dominio.
 6. Verificare dall'indirizzo pubblico pagina, grafici, metriche e collegamenti;
    aggiungere il link al README solo dopo questa prova.
 
-Account/sottoscrizione Azure e repository finale devono ancora essere identificati.
+Repository GitHub pubblico verificato: FoggettiAntonello/SolarWindCast.
+Account e sottoscrizione Azure restano da identificare.
 L'autorizzazione alla pubblicazione non implica l'attivazione di servizi a pagamento.
 
 ## Fonti ufficiali verificate il 21 novembre 2026

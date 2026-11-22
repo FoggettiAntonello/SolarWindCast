@@ -5,7 +5,7 @@ schema_version: 1
 
 release_v1:
   frozen_powerpoint_sha256: "83873a7601eb404501acca0d5c0bca4aa8edfa766678a7a0056a0e4f71bbabdb"
-  status: "MIT E REPOSITORY PUBBLICO APPROVATI - PUBBLICAZIONE IN CORSO"
+  status: "GITHUB PUBBLICATO E CI CPU SUPERATA - AZURE DA COMPLETARE"
   github_repository: https://github.com/FoggettiAntonello/SolarWindCast
   project_license: MIT
   presentation_format: "html_slides"

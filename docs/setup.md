@@ -13,9 +13,11 @@ normalmente (non in modalità modificabile). Importazione isolata fuori dalla
 cartella e CLI della demo senza pesi riuscite. La demo usa i dati sintetici
 generati in memoria; i valori non sono prestazioni su dati reali.
 
-Il percorso CPU e il download completo da Internet restano documentati ma non
-sono stati rieseguiti: questa prova certifica l'installazione da wheel locali
-con la build CUDA indicata. [Resoconto del collaudo](release_setup_validation.html).
+Aggiornamento del 22 novembre: il percorso Windows CPU con installazione da
+Internet è stato verificato dalla [pipeline GitHub Actions](https://github.com/FoggettiAntonello/SolarWindCast/actions/runs/45040562965):
+380 test passati, uno opzionale escluso, pip check/Ruff, demo e audit superati.
+La prova GPU locale del 21 novembre resta documentata separatamente nel
+[resoconto del collaudo](release_setup_validation.html).
 
 ## Ambiente già pronto: percorso usato nella verifica
 
@@ -46,7 +48,14 @@ questo procedimento non inizializza né collega il progetto a GitHub.
 I download e l'installazione delle dipendenze sono operazioni separate dai
 controlli locali: non eseguirli sull'ambiente già pronto per semplice verifica.
 
-Da una copia del progetto **senza** ambiente preesistente:
+Per ottenere il codice pubblicato:
+
+```powershell
+git clone https://github.com/FoggettiAntonello/SolarWindCast.git
+Set-Location SolarWindCast
+```
+
+Da questa copia **senza** ambiente preesistente:
 
 ```powershell
 if (Test-Path -LiteralPath .venv) {

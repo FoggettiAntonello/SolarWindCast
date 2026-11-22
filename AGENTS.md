@@ -83,6 +83,18 @@ contano più di risultati spettacolari.
 
 ## Metodo di lavoro
 
+22 novembre: primo push pubblico concluso (c22d2be), clone GitHub verificato:
+380 test passati,uno opzionale escluso,pip/Ruff puliti,audit e sito validi.
+Prima CI Windows/Python3.12.10/PyTorchCPU da Internet SUPERATA; log confermano
+380 test passati,uno escluso,demo baseline e audit sito superati. Esito reale:
+https://github.com/FoggettiAntonello/SolarWindCast/actions/runs/45040562965
+Git utilizzabile dall'utente Windows,senza eccezioni globali safe.directory.
+Nessun segreto,dato grezzo,peso o archivio privato pubblicato. Metriche e
+PowerPoint invariati. Restano account/sottoscrizione Azure,deploy Free,verifica
+URL pubblici,aggiornamento PowerPoint autorizzato dopo v1 e release finale.
+Resoconto docs/github_publication_20261122.html/.json.
+
+
 22 novembre: identità FoggettiAntonello verificata tramite API autenticata;
 repository pubblico SolarWindCast creato. Nessuna credenziale stampata o
 salvata nel progetto. Git locale inizializzato su main, autore con indirizzo

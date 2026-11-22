@@ -151,12 +151,12 @@ I testi alle revisioni 5M/28M sono stati ricontrollati online il 22 novembre
 Nessun peso è redistribuito qui. Il codice originale SolarWindCast è distribuito
 con [licenza MIT](LICENSE), approvata dall'utente il 22 novembre 2026. [Materiali esterni](NOTICE.md).
 
-Repository pubblico concordato: [FoggettiAntonello/SolarWindCast](https://github.com/FoggettiAntonello/SolarWindCast). Obiettivo
-aggiornato dall'utente: pubblicazione il 22 novembre 2026, dopo i controlli.
-La scansione dei file pubblici e i workflow CI/distribuzione sono predisposti.
-Restano pubblicazione del codice, primo esito reale di
-GitHub Actions, pubblicazione e prova del clone. La presenza dei workflow non
-certifica un'esecuzione remota già riuscita.
+Repository pubblico: [FoggettiAntonello/SolarWindCast](https://github.com/FoggettiAntonello/SolarWindCast).
+Il 22 novembre 2026 la [pipeline GitHub Actions](https://github.com/FoggettiAntonello/SolarWindCast/actions/runs/45040562965)
+ha superato installazione CPU da Internet, 380 test (uno opzionale escluso),
+pip check, Ruff, demo senza pesi e audit del sito. Anche il clone da GitHub
+è stato verificato localmente. [Resoconto](docs/github_publication_20261122.html).
+Azure e la release finale restano da completare.
 
 [Controllo dei file, pacchetto del sito e autenticazione](docs/publication.md).
 
