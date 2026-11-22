@@ -1,0 +1,55 @@
+{
+  "date": "2026-11-22",
+  "status": "local_checks_passed_MIT_approved_github_created",
+  "audit": {
+    "status": "pass",
+    "files_checked": 158,
+    "bytes_checked": 8259798,
+    "findings": [],
+    "project_license_present": true,
+    "powerpoint_frozen": true,
+    "claim_boundary": "Public allowlist and credential patterns checked; not a proof that every possible secret is detectable."
+  },
+  "public_checkout_tests": {
+    "passed": 380,
+    "skipped": 1,
+    "dependencies": "existing isolated-reference Windows CUDA environment; no fresh CPU Internet installation claimed"
+  },
+  "git_ignore_categories_verified": 8,
+  "original_project_git_active": true,
+  "scientific_bundle_unchanged": true,
+  "verified_source_studies": 8,
+  "new_inferences": 0,
+  "new_fits": 0,
+  "licenses_verified": [
+    {
+      "name": "Timestral-28M",
+      "sha256": "648194727930df730890e9f9affdbcc5c930d406d6829559b25ca3d5a973fc8c",
+      "online_pinned_copy_matches": true
+    },
+    {
+      "name": "Timestral-5M",
+      "sha256": "648194727930df730890e9f9affdbcc5c930d406d6829559b25ca3d5a973fc8c",
+      "online_pinned_copy_matches": true
+    }
+  ],
+  "project_license": "MIT approved by user; root LICENSE present",
+  "ci_workflows_prepared": true,
+  "ci_remote_executed": false,
+  "cpu_wheel_head_status": 200,
+  "site": {
+    "files": 10,
+    "bytes": 5065755,
+    "broken_links": 0,
+    "published": false
+  },
+  "git_clone_line_endings_verified": true,
+  "local_http_checks": {
+    "slides": 12,
+    "guide_opened": true,
+    "powerpoint_head_status": 200,
+    "temporary_server_stopped": true
+  },
+  "unexpected_tracked_files_guard_verified": true,
+  "github_repository": "https://github.com/FoggettiAntonello/SolarWindCast"
+}

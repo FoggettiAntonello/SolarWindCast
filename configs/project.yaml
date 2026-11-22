@@ -1,0 +1,798 @@
+# Configurazione unica del nuovo percorso di sviluppo.
+# I vecchi script TOML sono stati rimossi; i comandi attivi leggono questo YAML.
+# "DA DECIDERE" è un segnaposto: NON deve essere usato come valore operativo.
+schema_version: 1
+
+release_v1:
+  frozen_powerpoint_sha256: "83873a7601eb404501acca0d5c0bca4aa8edfa766678a7a0056a0e4f71bbabdb"
+  status: "MIT E REPOSITORY PUBBLICO APPROVATI - PUBBLICAZIONE IN CORSO"
+  github_repository: https://github.com/FoggettiAntonello/SolarWindCast
+  project_license: MIT
+  presentation_format: "html_slides"
+  presentation_max_slides: 13
+  presentation_slide_count: 12
+  release_target_date: "2026-11-22"
+  delivery_deadline: "2026-11-26"
+  generated_date: "2026-11-21"
+  output_directory: "docs/portfolio"
+  new_experiments_authorized: false
+  new_inference_budget: 0
+  downloads_authorized: false
+  publication_stage: "DOPO COLLAUDO E CONTROLLO DEI CONTENUTI"
+  static_hosting:
+    provider: "Azure Static Web Apps"
+    plan: "Free"
+    user_authorized: true
+    deployed: false
+    account: "DA DECIDERE"
+    published_url: "DA DECIDERE"
+  sources:
+    - {id: "hourly_pilot", title: "Primo pilota orario", kind: "hourly", directory: "reports/hourly_pilot_20261114", period: "Novembre 2024–ottobre 2026; giorno 15", unit: "MW"}
+    - {id: "hourly_extension", title: "Verifica su nuove giornate", kind: "hourly", directory: "reports/hourly_extension_20261114", period: "Novembre 2024–ottobre 2026; giorni 1, 8, 22", unit: "MW"}
+    - {id: "hourly_calibration", title: "Calibrazione causale degli intervalli", kind: "calibration", directory: "reports/hourly_calibration_results_20261115", period: "Maggio 2025–ottobre 2026; casi eleggibili", unit: "MW"}
+    - {id: "monthly_original", title: "Confronto mensile originale", kind: "monthly", directory: "reports/step11_monthly_20261107", period: "Novembre 2024–ottobre 2026; mesi completi", unit: "MWh"}
+    - {id: "context_screen", title: "Screening contesti 12/24 mesi - solo sviluppo", kind: "context_screen", directory: "reports/timestral_improvement_results_20261110", period: "Dicembre 2023–ottobre 2024; sviluppo comune", unit: "MWh"}
+    - {id: "monthly_calibration_development", title: "Calibrazione eolica mensile - nove mesi di sviluppo", kind: "development", directory: "reports/wind_calibration_extended_20261110", period: "Febbraio–ottobre 2024; nove mesi comuni", unit: "MWh"}
+    - {id: "monthly_final", title: "Ultimo confronto eolico mensile", kind: "final_monthly", directory: "reports/final_wind_results_20261114", period: "Novembre 2024–ottobre 2026; 24 mesi", unit: "MWh"}
+    - {id: "load_residual", title: "Carico e carico residuo mensili", kind: "monthly", directory: "reports/step12_monthly_20261109", period: "Novembre 2024–ottobre 2026; mesi completi", unit: "MWh"}
+
+hourly_calibration:
+  status: "CONCLUSO - COPERTURE MIGLIORI, CRITERI COMPLESSIVI NON SUPERATI"
+  execution_authorized: false
+  source_directories: ["reports/hourly_pilot_20261114", "reports/hourly_extension_20261114"]
+  protocol_directory: "reports/hourly_calibration_protocol_20261115"
+  output_directory: "reports/hourly_calibration_results_20261115"
+  targets: ["solar", "wind"]
+  source_model: "timestral_5M"
+  evaluation_source_directory: "reports/hourly_extension_20261114"
+  evaluation_start_utc: "2025-05-01T00:00:00Z"
+  evaluation_end_exclusive_utc: "2026-11-01T00:00:00Z"
+  method: "nonnegative_additive_interval_expansion"
+  lookback_days: 180
+  minimum_complete_origins: 20
+  horizon_hours: 24
+  assumed_delay_hours: 24
+  quantiles: [0.05, 0.1, 0.5, 0.9, 0.95]
+  interval_levels: [0.8, 0.9]
+  preserve_median: true
+  enforce_nested_expansions: true
+  new_inference_budget: 0
+  training_authorized: false
+  downloads_authorized: false
+  proposed_gates:
+    minimum_evaluation_origins: 30
+    minimum_pinball_reduction_pct: 5
+    pinball_not_worse_than_probabilistic_baseline: true
+    maximum_coverage_absolute_deviation: 0.05
+    maximum_width_ratio_to_probabilistic_baseline: 1.1
+    point_predictions_unchanged: true
+
+hourly_extension:
+  authorized: false
+  status: "CONCLUSO - VANTAGGIO PUNTUALE MODESTO, INTERVALLI SOTTOCOPERTI"
+  previous_directory: "reports/hourly_pilot_20261114"
+  output: "reports/hourly_extension_20261114"
+  days_of_month: [1, 8, 22]
+  maximum_inferences: 144
+  calibration_authorized: false
+
+hourly_pilot:
+  authorized: false
+  status: "CONCLUSO - MAE MIGLIORE, INTERVALLI SOTTOCOPERTI; NESSUNA PROMOZIONE"
+  source: "data/processed/step10_five_year_hourly_20261107"
+  output: "reports/hourly_pilot_20261114"
+  targets: {solar: ["solar"], wind: ["wind_onshore", "wind_offshore"]}
+  first_month: "2024-11"
+  last_month: "2026-10"
+  day_of_month: 15
+  context_hours: 672
+  horizon_hours: 24
+  assumed_delay_hours: 24
+  seasonal_lags_hours: [48, 168]
+  maximum_inferences: 48
+  model_size: "5M"
+  device: "cpu"
+  cpu_threads: 1
+  quantiles: [0.05, 0.1, 0.5, 0.9, 0.95]
+  minimum_hour_samples: 20
+  interval_levels: [0.8, 0.9]
+
+# Proposta per l'ultimo confronto eolico: preparazione autorizzata, esecuzione no.
+final_wind_experiment:
+  status: "CONCLUSO - CRITERI NON SUPERATI, FERMARE ITERAZIONE"
+  execution_authorized: false
+  target: "wind"
+  geography: "IT_SUD"
+  components: ["wind_onshore", "wind_offshore"]
+  candidate: "timestral_28M_known_calendar__ctx12__calibrated"
+  uncalibrated_control: "timestral_28M_known_calendar__ctx12"
+  reference: "timestral_28M_known_calendar__ctx24"
+  context_months: 12
+  reference_context_months: 24
+  issue_lead_hours: 12
+  unavailable_recent_months: 1
+  prediction_length_months: 2
+  scored_horizon_step: 2
+  evaluation_start_month: "2024-11"
+  evaluation_end_month_inclusive: "2026-10"
+  evaluation_kind: "ESPLORATIVA - PERIODO GIA ESAMINATO"
+  baseline_methods: ["last_complete_month", "recent_complete_months", "same_month_previous_year", "seasonal_empirical_rolling_errors"]
+  calibration:
+    minimum_past_errors: 6
+    lookback_months: 24
+    scale_lower: 0.5
+    scale_upper: 1.5
+    identity_penalty: 0.05
+    bisection_steps: 80
+    keep_median: true
+  warmup_directory: "reports/wind_history_extension_20261110"
+  original_results_directory: "reports/step11_monthly_20261107"
+  previous_calibration_directory: "reports/wind_calibration_extended_20261110"
+  protocol_directory: "reports/final_wind_protocol_20261114"
+  output_directory: "reports/final_wind_results_20261114"
+  proposed_maximum_new_inferences: 24
+  approved_new_inference_budget: 24
+  device: "cpu"
+  cpu_threads: 1
+  local_files_only: true
+  training_authorized: false
+  downloads_authorized: false
+  alternate_methods_authorized: false
+  automatic_operational_promotion: false
+  prospective_validation_schedule: "DA DECIDERE - SEPARATA DA QUESTO CONFRONTO"
+  proposed_gates:
+    minimum_common_cases: 12
+    point_comparison: "primary reference and all four baselines on common months"
+    probabilistic_comparison: "primary reference and rolling probabilistic baseline on common quantile months"
+    minimum_mae_reduction_pct: 5
+    minimum_monthly_win_fraction: 0.6
+    maximum_rmse_change_pct: 0
+    maximum_pinball_change_pct: 0
+    maximum_interval_width_ratio: 1.1
+    coverage_not_lower_than_reference: true
+
+# Chiusura semplificata approvata; nuovi esperimenti richiedono protocollo separato.
+project_closure:
+  status: "ULTIMO ESPERIMENTO CONCLUSO - CRITERI NON SUPERATI"
+  main_geography: "IT_SUD"
+  main_targets: ["solar", "wind_onshore_plus_offshore"]
+  macroarea_role: "estensione documentata, non target operativo"
+  portfolio_preparation_enabled: false
+  comparison_with_other_models: "RINVIATO"
+  streamlit: "RINVIATO - CHIUSURA CON HTML"
+  further_downloads_authorized: false
+  training_authorized: false
+  new_inference_budget: 0
+  final_experiment_protocol: "docs/final_wind_protocol.md - ESEGUITO, ESITO NEGATIVO"
+  assessment_directory: "reports/readiness_review_20261114"
+
+# Estensione autorizzata dopo il lotto 2021; solo B16/B19 Calabria.
+calabria_five_year_extension:
+  authorized: true
+  status: "CONCLUSO - 120 RICHIESTE; MACROAREA 69 MESI SOLARI E 70 ONSHORE COMPLETI"
+  start_utc: "2021-11-01T00:00:00Z"
+  end_exclusive_utc: "2026-11-01T00:00:00Z"
+  combined_start_utc: "2021-01-01T00:00:00Z"
+  frequency: "1h"
+  area: "IT_CALA"
+  area_eic: "10Y1001C--00096J"
+  south_eic: "10Y1001A1001A788"
+  components:
+    - {psr_type: "B16", target: "solar", production_type: "Solar", output_name: "solar"}
+    - {psr_type: "B19", target: "wind", production_type: "Wind Onshore", output_name: "wind_onshore"}
+  maximum_requests: 120
+  raw_directory: "data/raw/entsoe/calabria_five_year_20261111"
+  report_directory: "reports/macroarea_70months_20261111"
+  processed_directory: "data/processed/macroarea_70months_20261111"
+  south_processed_directory: "data/processed/step10_five_year_hourly_20261107"
+  previous_report_directory: "reports/macroarea_2021_extension_20261111"
+  timeout_seconds: 60
+  retry_attempts: 1
+  pause_seconds: 1
+  chunk_days: 31
+  apply_structural_zeros: false
+  pre2021_download_authorized: false
+  new_inference_budget: 0
+
+# Lotto autorizzato dopo il pilota: nessuna acquisizione fuori da questo periodo.
+macroarea_2021_extension:
+  authorized: true
+  status: "CONCLUSO - 36 RICHIESTE, NESSUN BUCO"
+  start_utc: "2021-02-01T00:00:00Z"
+  end_exclusive_utc: "2021-11-01T00:00:00Z"
+  frequency: "1h"
+  areas: {IT_SUD: "10Y1001A1001A788", IT_CALA: "10Y1001C--00096J"}
+  components:
+    - {psr_type: "B16", target: "solar", production_type: "Solar"}
+    - {psr_type: "B19", target: "wind", production_type: "Wind Onshore"}
+  maximum_requests: 36
+  raw_directory: "data/raw/entsoe/macroarea_2021_extension_20261111"
+  report_directory: "reports/macroarea_2021_extension_20261111"
+  pilot_report_directory: "reports/macroarea_pilot_20261111"
+  timeout_seconds: 60
+  retry_attempts: 1
+  pause_seconds: 1
+  chunk_days: 31
+  full_download_authorized: false
+  apply_structural_zeros: false
+
+# Pilota autorizzato con «procedi»: solo queste quattro richieste.
+macroarea_monthly_pilot:
+  authorized: true
+  status: "CONCLUSO - QUATTRO SERIE COMPLETE"
+  start_utc: "2021-01-01T00:00:00Z"
+  end_exclusive_utc: "2021-02-01T00:00:00Z"
+  frequency: "1h"
+  areas: {IT_SUD: "10Y1001A1001A788", IT_CALA: "10Y1001C--00096J"}
+  components:
+    - {psr_type: "B16", target: "solar", production_type: "Solar"}
+    - {psr_type: "B19", target: "wind", production_type: "Wind Onshore"}
+  maximum_requests: 4
+  raw_directory: "data/raw/entsoe/macroarea_pilot_20261111"
+  report_directory: "reports/macroarea_pilot_20261111"
+  timeout_seconds: 60
+  retry_attempts: 1
+  pause_seconds: 1
+  chunk_days: 31
+  full_download_authorized: false
+  apply_structural_zeros: false
+
+# Proposta documentata: nessuna sostituzione dei dati o acquisizione autorizzata.
+offshore_history_proposal:
+  status: "DA DECIDERE - PROPOSTA DOPO AUDIT"
+  report_directory: "reports/offshore_policy_20261111"
+  acquisition_plan_file: "reports/offshore_policy_20261111/acquisition_plan.json"
+  start_utc: "2019-01-01T00:00:00Z"
+  end_exclusive_utc: "2026-11-01T00:00:00Z"
+  zone_switch_utc: "2020-12-31T23:00:00Z"
+  structural_zero_candidate_end_exclusive_utc: "2022-01-01T00:00:00Z"
+  calabria_inferred_zero_candidate_end_exclusive_utc: "2026-01-01T00:00:00Z"
+  calabria_2026_policy: "DA DECIDERE - MANCANTI CONSERVATI"
+  transition_2022_policy: "MANCANTI CONSERVATI - NESSUNA SOGLIA ORARIA PRESUNTA"
+  apply_structural_zeros: false
+  full_download_authorized: false
+  operational_target_changed: false
+  new_inference_budget: 0
+  proposed_pilot_month_utc: "2021-01"
+  proposed_pilot_psr_types: ["B16", "B19"]
+  proposed_pilot_maximum_requests: 4
+  retries_in_budget: false
+  automatic_retries: 0
+
+# Verifica di bilancio su una sola giornata, per distinguere aree disgiunte e duplicazioni.
+south_rossano_audit:
+  authorized: true
+  raw_directory: "data/raw/entsoe/south_rossano_audit_20261111"
+  report_directory: "reports/south_rossano_audit_20261111"
+  date_utc: "2020-12-30T00:00:00Z"
+  new_sample_areas: ["IT", "IT_NORD", "IT_CNOR", "IT_CSUD", "IT_SARD", "IT_SICI"]
+  reused_samples_directory: "data/raw/entsoe/macroarea_audit_20261110"
+  maximum_new_requests: 6
+  transition_start_utc: "2020-12-31T22:00:00Z"
+  transition_end_exclusive_utc: "2021-01-01T02:00:00Z"
+  transition_areas: ["IT_SUD", "IT_ROSN", "IT_CALA"]
+  maximum_transition_requests: 3
+  pole_eic: "10Y1001A1001A77A"
+  required_partition_eics: ["10Y1001A1001A73I", "10Y1001A1001A70O", "10Y1001A1001A71M", "10Y1001A1001A788", "10Y1001A1001A74G", "10Y1001A1001A75E", "10Y1001A1001A77A"]
+  numerical_tolerance_mw: 0.000001
+  timeout_seconds: 30
+  retry_attempts: 1
+  pause_seconds: 1
+  full_download_authorized: false
+  historical_join_rule: "DA DECIDERE - VERIFICA SUD/ROSSANO"
+
+# Solo fattibilità della macroarea: non sostituisce il target Sud ufficiale.
+macroarea_feasibility:
+  authorized: true
+  full_download_authorized: false
+  operational_target_changed: false
+  name: "Sud + Calabria"
+  required_eics: ["10Y1001A1001A788", "10Y1001C--00096J"]
+  raw_directory: "data/raw/entsoe/macroarea_audit_20261110"
+  report_directory: "reports/macroarea_feasibility_20261110"
+  timeout_seconds: 30
+  retry_attempts: 1
+  pause_seconds: 1
+  sample_requests:
+    - {area: "IT_SUD", date_utc: "2020-12-30T00:00:00Z"}
+    - {area: "IT_ROSN", date_utc: "2020-12-30T00:00:00Z"}
+    - {area: "IT_CALA", date_utc: "2021-01-01T00:00:00Z"}
+    - {area: "IT_CALA", date_utc: "2026-10-01T00:00:00Z"}
+  historical_pole_policy: "DA DECIDERE - VERIFICARE COPERTURA RINNOVABILI"
+  offshore_zero_policy: "DA DECIDERE - MANCANTI CONSERVATI"
+  production_switch_rule: "DA DECIDERE - CAMBIO DEL GIORNO DI FLUSSO 2021 E CONFINE UTC"
+
+# Audit di disponibilità: solo tre richieste giornaliere, nessun ampliamento massivo.
+history_feasibility_audit:
+  authorized: true
+  full_download_authorized: false
+  raw_directory: "data/raw/entsoe/history_audit_20261110"
+  report_directory: "reports/history_feasibility_20261110"
+  sample_dates_utc: ["2016-11-01T00:00:00Z", "2018-11-01T00:00:00Z", "2021-01-01T00:00:00Z"]
+  market_area: "IT_SUD"
+  timeout_seconds: 30
+  retry_attempts: 1
+  pause_seconds: 1
+  maximum_request_days: 1
+  earliest_comparable_start_utc: "DA DECIDERE - CAMBIO ZONALE 2021 DA RISPETTARE"
+  offshore_structural_zero_policy: "DA DECIDERE - MANCANTI CONSERVATI"
+
+# Recupero autorizzato delle sole cinque origini già ammissibili nei dati locali.
+wind_history_extension:
+  authorized: true
+  additional_origins: ["2023-07", "2023-08", "2023-09", "2023-10", "2023-11"]
+  new_inference_budget: 5
+  source_directory: "reports/timestral_improvement_results_20261110"
+  previous_calibration_directory: "reports/wind_calibration_20261110"
+  output_directory: "reports/wind_history_extension_20261110"
+  calibrated_output_directory: "reports/wind_calibration_extended_20261110"
+  device: "cpu"
+  cpu_threads: 1
+  local_files_only: true
+
+# Calibrazione eolica controllata autorizzata: un solo metodo, nessuna ricerca di griglia.
+wind_calibration:
+  authorized: true
+  target: "wind"
+  source_directory: "reports/timestral_improvement_results_20261110"
+  output_directory: "reports/wind_calibration_20261110"
+  candidate: "timestral_28M_known_calendar__ctx12"
+  reference: "timestral_28M_known_calendar__ctx24"
+  minimum_past_errors: 6
+  lookback_months: 24
+  scale_lower: 0.5
+  scale_upper: 1.5
+  identity_penalty: 0.05
+  bisection_steps: 80
+  minimum_evaluation_months: 12
+  comparison_phase: "development"
+  keep_median: true
+  new_inference_budget: 0
+  evaluate_old_test: false
+  alternate_methods_authorized: false
+
+# Protocollo approvato dall'utente: esecuzione zero-shot, nessun training.
+timestral_improvement:
+  status: "APPROVATO ED ESEGUITO - NESSUNA PROMOZIONE"
+  execution_authorized: true
+  training_authorized: false
+  selected_parameters: "griglia eseguita; nessuna nuova variante promossa"
+  results_directory: "reports/timestral_improvement_results_20261110"
+  proposal:
+    experiment: "zero_shot_context_screen"
+    targets: ["solar", "wind"]
+    model_sizes: ["5M", "28M"]
+    context_months: [12, 24]
+    variants: ["target_only", "known_calendar"]
+    evaluation_origins: "intersection_of_eligible_development_origins"
+    primary_metric: "mae_mwh"
+    minimum_relative_mae_improvement: 0.05
+    minimum_paired_win_fraction: 0.6
+    maximum_width_ratio: 1.10
+    require_rmse_not_worse: true
+    require_pinball_not_worse: true
+    require_coverage_not_worse: true
+    require_improvement_over_best_deterministic_baseline: true
+    comparison_reference: "best_original_24_month_variant_on_common_development_origins"
+    selection_tie_break: ["mae_mwh", "pinball_mwh", "smaller_model", "longer_context", "target_only"]
+    maximum_selected_variants_per_target: 1
+    heldout_policy: "single_exploratory_comparison_after_selection_no_retuning"
+    no_winner_policy: "retain_original_and_stop_without_expanding_search"
+    device: "cpu"
+    cpu_threads: 1
+    local_files_only: true
+    weather_enabled: false
+    adaptation_enabled: false
+    old_forecasts_directory: "reports/step11_monthly_20261107"
+    output_protocol_directory: "reports/timestral_improvement_protocol_20261110"
+
+# Verifica autorizzata prima del training reale: nessun aggiornamento dei pesi.
+finetuning_feasibility:
+  authorized: true
+  real_training_authorized: false
+  model_sizes: ["5M", "28M"]
+  device: "cpu"
+  cpu_threads: 1
+  output_directory: "reports/finetuning_feasibility_20261109"
+  illustrative_validation_months: [3, 6]
+  learning_rate: "DA DECIDERE"
+  epochs: "DA DECIDERE"
+  trainable_scope: "DA DECIDERE"
+  validation_split: "DA DECIDERE"
+
+# Step 12: estensione separata; non modifica il protocollo congelato solare/eolico.
+step12:
+  authorized: true
+  targets: ["load", "residual_load"]
+  inherited_protocol: "monthly_protocol"
+  start_utc: "2021-11-01T00:00:00Z"
+  end_exclusive_utc: "2026-11-01T00:00:00Z"
+  production_directory: "data/processed/step10_five_year_hourly_20261107"
+  raw_directory: "data/raw/entsoe/step12_load_20261109"
+  output_directory: "reports/step12_monthly_20261109"
+  source_check_directory: "reports/step12_sources_20261109"
+  acquisition:
+    authorized: true
+    history_download_authorized: true
+    market_area: "IT_SUD"
+    maximum_request_days: 31
+    timeout_seconds: 30
+    retry_attempts: 1
+    pause_seconds: 1
+  probes:
+    - {product: "actual_load", start_utc: "2021-11-01T00:00:00Z", end_exclusive_utc: "2021-11-02T00:00:00Z"}
+    - {product: "actual_load", start_utc: "2026-10-01T00:00:00Z", end_exclusive_utc: "2026-10-02T00:00:00Z"}
+    - {product: "day_ahead_load", start_utc: "2026-10-01T00:00:00Z", end_exclusive_utc: "2026-10-02T00:00:00Z"}
+    - {product: "month_ahead_load", start_utc: "2026-10-01T00:00:00Z", end_exclusive_utc: "2026-11-01T00:00:00Z"}
+    - {product: "day_ahead_renewables", start_utc: "2026-10-01T00:00:00Z", end_exclusive_utc: "2026-10-02T00:00:00Z"}
+  official_comparison:
+    monthly_energy_enabled: false
+    reason: "day-ahead non disponibile per tutto il mese all'emissione; A32 min/max non sono energia"
+  csv:
+    columns: "DA DECIDERE"
+    area: "DA DECIDERE"
+    separator: "DA DECIDERE"
+    decimal: "DA DECIDERE"
+    encoding: "DA DECIDERE"
+
+# Ispezione dello snapshot esistente: descrive il formato osservato,
+# non approva frequenza o periodo degli esperimenti previsivi.
+inspection:
+  step10:
+    mode: "existing_local_only"
+    acquisition_directory: "data/raw/entsoe/20261103T100207Z_64b0ec85"
+    start_utc: "2026-10-31T00:00:00Z"
+    end_exclusive_utc: "2026-11-03T00:00:00Z"
+    native_frequency: "15min"
+    area_eic: "10Y1001A1001A788"
+    components: ["Solar", "Wind Onshore", "Wind Offshore"]
+    decode_a03: true
+
+# Step 10 concluso: protocollo mensile congelato, esperimenti ancora disabilitati.
+# Il comando history_acquisition legge il solo piano esplicitamente autorizzato.
+planning:
+  step10:
+    status: "STEP 10 CONCLUSO - PROTOCOLLO MENSILE CONGELATO"
+    acquisition_authorized: true
+    proposed_start_utc: "2021-11-01T00:00:00Z"
+    proposed_end_exclusive_utc: "2026-11-01T00:00:00Z"
+    proposed_test_start_utc: "2024-11-01T00:00:00Z"
+    proposed_duration_months: 60
+    proposed_components: ["Solar", "Wind Onshore", "Wind Offshore"]
+    frequency: "1h"
+    weather_model: "DA DECIDERE"
+    availability_status: "60 MESI VERIFICATI - COMPLETI: SOLARE 59, ONSHORE 60, OFFSHORE 53"
+    method_document: "docs/history_plan.md"
+    evaluation_proposal:
+      status: "APPROVATO - ESECUZIONE STEP 11 DA AUTORIZZARE"
+      objective: "next_calendar_month_total_energy"
+      output_unit: "MWh"
+      horizon: "calendar_month"
+      context_months: 24
+      issue_lead_hours: 12
+      prediction_length_months: 2
+      emission_schedule: "12h_before_calendar_month_start"
+      month_boundary_timezone: "UTC"
+      aggregate_interval_method: "direct_monthly_quantiles_scaled_by_month_hours"
+      development_start_utc: "2021-11-01T00:00:00Z"
+      test_start_utc: "2024-11-01T00:00:00Z"
+      test_end_exclusive_utc: "2026-11-01T00:00:00Z"
+      issue_time_utc: "12:00 dell'ultimo giorno del mese precedente"
+      publication_delay: "DA DECIDERE"
+    acquisition:
+      raw_directory: "data/raw/entsoe/history_20211101_20261101"
+      reuse_directory: "data/raw/entsoe/history_20241101_20261101"
+      timeout_seconds: 30
+      retry_attempts: 1
+      pause_seconds: 1
+      chunk_days: 31
+      sample_dates_utc: ["2021-11-01T00:00:00Z", "2023-05-01T00:00:00Z", "2024-10-31T00:00:00Z"]
+
+# Configurazione autorevole dei futuri esperimenti mensili. I campi orari sotto
+# restano separati e non devono essere usati come se i mesi fossero ore.
+monthly_protocol:
+  status: "APPROVATO E CONGELATO"
+  approved: true
+  calendar_timezone: "UTC"
+  wind_components: ["wind_onshore", "wind_offshore"]
+  targets: ["solar", "wind"]
+  context_months: 24
+  unavailable_recent_months: 1
+  issue_lead_hours: 12
+  prediction_length_months: 2
+  model_quantity: "monthly_mean_power_mw"
+  final_quantity: "monthly_energy_mwh"
+  interval_method: "direct_monthly_quantiles_scaled_by_month_hours"
+  missing_input_policy: "native_mask"
+  minimum_valid_context_months: 12
+  clip_nonnegative: false
+  symmetric_averaging: false
+  quantile_real_cap_k: 0.0
+  per_shot_horizon_patches: 1
+  extreme_value_threshold: 1.0e+30
+  forecast_mode: "separate_univariate_targets"
+  model_variants: ["target_only", "known_calendar"]
+  future_calendar_features: ["month_sin", "month_cos"]
+  baseline_methods: ["last_complete_month", "same_month_previous_year", "recent_complete_months"]
+  baseline_recent_months: 3
+  baseline_seasonal_lag_months: 12
+  probabilistic_baseline: "seasonal_empirical_rolling_errors"
+  residual_lookback_months: 24
+  minimum_calibration_errors: 12
+  residual_quantile_method: "linear"
+  interval_levels: [0.8, 0.9]
+  comparison_quantile_levels: [0.05, 0.1, 0.5, 0.9, 0.95]
+  models:
+    - size: "5M"
+      revision: "bdd20cfc15a3fea0e4cb5ccef37f8d3ca7aa335f"
+    - size: "28M"
+      revision: "49b26409ac87b5935539a5d8ffe7f397b720db47"
+  package_version: "1.0.0"
+  code_revision: "a534bdbd244d64f3d9d743f46c7bf6fc330ed4ff"
+  device: "cpu"
+  local_files_only: true
+  weather_enabled: false
+  evaluation_kind: "retrospective_current_vintage_not_operational"
+  experiment_enabled: false
+
+# Autorizzazione dello Step 11 distinta dalle impostazioni congelate dello Step 10.
+monthly_execution:
+  authorized: true
+  frozen_protocol_directory: "reports/step10_monthly_protocol_frozen_20261107"
+  cpu_threads: 1
+
+preparation:
+  enabled: true
+  source_report: "reports/step10_five_year_history_20261107"
+  series:
+    - {name: "solar", target: "solar", components: ["solar"]}
+    - {name: "wind_onshore", target: "wind", components: ["wind_onshore"]}
+    - {name: "wind_offshore", target: "wind", components: ["wind_offshore"]}
+
+# Calendario descrittivo, ora coerente con i confini mensili confermati.
+monthly_inspection:
+  calendar_timezone: "UTC"
+  prepared_directory: "data/processed/step10_five_year_hourly_20261107"
+
+project:
+  name: "SolarWindCast"
+  timezone: "UTC"
+  stage: "real_data_inspection"
+
+paths:
+  raw: "data/raw"
+  interim: "data/interim"
+  processed: "data/processed"
+  synthetic: "data/synthetic"
+  cache: "data/cache"
+  reports: "reports"
+  notebooks: "notebooks"
+  documentation: "docs"
+
+execution:
+  real_data_enabled: false
+  network_requires_approval: true
+  allow_overwrite: false
+  random_seed: "DA DECIDERE"
+
+target:
+  # Opzioni previste: solar, wind, load, residual_load.
+  selected: "DA DECIDERE"
+  wind_components: ["wind_onshore", "wind_offshore"]
+  market_area: "IT_SUD"
+  unit: "MW"
+
+data:
+  start_utc: "2021-11-01T00:00:00Z"
+  end_exclusive_utc: "2026-11-01T00:00:00Z"
+  frequency: "1h"
+  missing_value: "NaN"
+  # NaN resta mancante. Qualsiasi esclusione/imputazione futura va approvata e registrata.
+  missing_policy: "keep_nan"
+  anomaly_policy: "DA DECIDERE"
+  resampling_policy: "complete_intervals_mean"
+  publication_delay: "DA DECIDERE"
+  revision_policy: "DA DECIDERE"
+
+synthetic:
+  # Parametri delle prove sintetiche, separati dalle decisioni sui dati reali.
+  baseline_mw: "DA DECIDERE"
+  start_utc: "DA DECIDERE"
+  frequency: "DA DECIDERE"
+  number_of_steps: "DA DECIDERE"
+  daily_cycle_amplitude: "DA DECIDERE"
+  seasonal_period_steps: "DA DECIDERE"
+  seasonal_amplitude: "DA DECIDERE"
+  noise_scale: "DA DECIDERE"
+  missing_fraction: "DA DECIDERE"
+  random_seed: "DA DECIDERE"
+
+sources:
+  entsoe:
+    mode: "DA DECIDERE"
+    api_enabled: false
+    token_environment_variable: "ENTSOE_API_KEY"
+    csv_paths: "DA DECIDERE"
+    csv_area: "DA DECIDERE"
+    csv_separator: "DA DECIDERE"
+    csv_decimal: "DA DECIDERE"
+    csv_encoding: "DA DECIDERE"
+    production_types: "DA DECIDERE"
+    chunk_days: "DA DECIDERE"
+    timeout_seconds: "DA DECIDERE"
+    retry_attempts: "DA DECIDERE"
+    pause_seconds: "DA DECIDERE"
+  weather:
+    provider: "open_meteo"
+    enabled: false
+    historical_product: "DA DECIDERE"
+    forecast_archive_product: "DA DECIDERE"
+    run_utc: "DA DECIDERE"
+    model: "DA DECIDERE"
+    locations: "DA DECIDERE"
+    variables: "DA DECIDERE"
+    variable_time_semantics: "DA DECIDERE"
+    spatial_aggregation: "DA DECIDERE"
+    run_selection_policy: "DA DECIDERE"
+    publication_delay: "DA DECIDERE"
+    archive_provenance_policy: "DA DECIDERE"
+    interval_boundary_padding: "DA DECIDERE"
+    cache_policy: "DA DECIDERE"
+    timeout_seconds: "DA DECIDERE"
+    retry_attempts: "DA DECIDERE"
+    pause_seconds: "DA DECIDERE"
+
+features:
+  alignment_policy: "DA DECIDERE"
+  weather_bindings: "DA DECIDERE"
+  past_covariates: "DA DECIDERE"
+  known_future_covariates: "DA DECIDERE"
+  calendar:
+    country: "IT"
+    features: "DA DECIDERE"
+    holiday_timezone_policy: "DA DECIDERE"
+    observed: "DA DECIDERE"
+
+forecast:
+  context_steps: "DA DECIDERE"
+  horizon_steps: "DA DECIDERE"
+  issue_time_utc: "DA DECIDERE"
+  quantile_levels: "DA DECIDERE"
+  interval_levels: "DA DECIDERE"
+  nonnegative_policy: "DA DECIDERE"
+
+models:
+  baselines:
+    methods: "DA DECIDERE"
+    seasonal_lag_steps: "DA DECIDERE"
+    quantile_method: "DA DECIDERE"
+    minimum_valid_samples: "DA DECIDERE"
+  timestral:
+    enabled: false
+    package_version: "DA DECIDERE"
+    code_revision: "DA DECIDERE"
+    size: "DA DECIDERE"
+    repository_id: "DA DECIDERE"
+    revision: "DA DECIDERE"
+    device: "DA DECIDERE"
+    local_files_only: true
+    covariate_variants: "DA DECIDERE"
+    inference_options: "DA DECIDERE"
+  lightgbm:
+    enabled: false
+    features: "DA DECIDERE"
+    hyperparameters: "DA DECIDERE"
+  other_models: "DA DECIDERE"
+
+backtest:
+  strategy: "rolling_origin"
+  failure_policy: "DA DECIDERE"
+  first_origin_utc: "DA DECIDERE"
+  stride_steps: "DA DECIDERE"
+  number_of_windows: "DA DECIDERE"
+  context_window_policy: "DA DECIDERE"
+  training_period: "DA DECIDERE"
+  validation_period: "DA DECIDERE"
+  test_period: "DA DECIDERE"
+  overlap_scoring_policy: "DA DECIDERE"
+
+evaluation:
+  missing_policy: "DA DECIDERE"
+  metrics: ["mae", "rmse", "pinball_loss", "interval_coverage"]
+  aggregation: "DA DECIDERE"
+  daylight_policy: "DA DECIDERE"
+  uncertainty_comparison: "DA DECIDERE"
+
+presentation:
+  format: "streamlit"
+  display_timezone: "UTC"
+  default_visible_period: "DA DECIDERE"
+
+# Profilo dimostrativo dello Step 8: numeri per collaudare il codice.
+# NON sostituisce le scelte operative DA DECIDERE sopra. Nessun dato reale.
+demonstrations:
+  step8:
+    purpose: "synthetic_validation_only"
+    overrides:
+      target:
+        selected: "solar"
+      data:
+        frequency: "1h"
+        publication_delay: "0h"
+      synthetic:
+        start_utc: "2026-01-01T00:00:00Z"
+        frequency: "1h"
+        number_of_steps: 96
+        baseline_mw: 100.0
+        daily_cycle_amplitude: 10.0
+        seasonal_period_steps: 96
+        seasonal_amplitude: 5.0
+        noise_scale: 1.0
+        missing_fraction: 0.03
+        random_seed: 42
+      synthetic_weather:
+        source_name: "synthetic_weather"
+        variable: "temperature_2m"
+        location:
+          name: "synthetic_point"
+          latitude: 41.46
+          longitude: 15.55
+        baseline: 10.0
+        amplitude: 3.0
+        period_steps: 24
+      features:
+        alignment_policy: "exact"
+        past_covariates: ["weather_synthetic_temperature_2m"]
+        known_future_covariates: ["calendar_hour", "calendar_day_of_week", "calendar_is_holiday"]
+        calendar:
+          country: "IT"
+          features: ["hour", "day_of_week", "is_holiday"]
+          holiday_timezone_policy: "UTC"
+          observed: true
+        weather_bindings:
+          - name: "synthetic"
+            source: "synthetic_weather"
+            role: "past"
+            variables: ["temperature_2m"]
+            time_alignment:
+              temperature_2m: "instant_at_start"
+            publication_delay: "0h"
+            availability_evidence: "synthetic fixture only; not an operational delay"
+      forecast:
+        context_steps: 64
+        horizon_steps: 8
+        quantile_levels: [0.1, 0.5, 0.9]
+        interval_levels: [0.8]
+      models:
+        baselines:
+          methods: ["persistence", "seasonal_naive", "historical_quantiles"]
+          seasonal_lag_steps: 24
+          quantile_method: "linear"
+          minimum_valid_samples: 32
+        timestral:
+          enabled: true
+          size: "5M"
+          repository_id: "mistralai/Timestral-5M"
+          revision: "bdd20cfc15a3fea0e4cb5ccef37f8d3ca7aa335f"
+          code_revision: "a534bdbd244d64f3d9d743f46c7bf6fc330ed4ff"
+          package_version: "1.0.0"
+          device: "cpu"
+          local_files_only: true
+          covariate_variants: ["target_only", "past", "past_known"]
+          inference_options:
+            missing_input_policy: "native_mask"
+            symmetric_averaging: false
+            clip_nonnegative: false
+            quantile_real_cap_k: 0.0
+            per_shot_horizon_patches: 1
+            extreme_value_threshold: 1.0e+30
+      backtest:
+        first_origin_utc: "2026-01-03T16:00:00Z"
+        stride_steps: 8
+        number_of_windows: 3
+        context_window_policy: "fixed"
+        overlap_scoring_policy: "reject"
+        failure_policy: "raise"
+      evaluation:
+        missing_policy: "omit"
+        aggregation: "pooled_cases"

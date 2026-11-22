@@ -1,0 +1,245 @@
+{
+  "date": "2026-11-21",
+  "python": "3.12.10",
+  "platform": "Windows",
+  "torch": "2.11.0+cu128",
+  "isolated_environment": true,
+  "system_site_packages": false,
+  "tests_passed": 370,
+  "tests_skipped": 1,
+  "pip_check": "passed",
+  "ruff": "passed",
+  "isolated_import": "passed",
+  "installed_cli_demo": "passed",
+  "cpu_install_retested": false,
+  "full_internet_install_retested": false,
+  "timestral_cached_source_commit": "a534bdbd244d64f3d9d743f46c7bf6fc330ed4ff",
+  "wheel_sha256": "91fa4f6ec52a2a366538d6199e6853f602ff4a61356fba797e4c588d2e52d5bf",
+  "wheel_files": 43,
+  "new_real_inferences": 0,
+  "before_synthetic": [
+    {
+      "family": "point",
+      "metric": "mae_mw",
+      "model": "baseline_persistence",
+      "n_total": 24,
+      "n_used": 23,
+      "value": 7.189114497635484
+    },
+    {
+      "family": "point",
+      "metric": "rmse_mw",
+      "model": "baseline_persistence",
+      "n_total": 24,
+      "n_used": 23,
+      "value": 8.92011845341715
+    },
+    {
+      "family": "point",
+      "metric": "bias_mw",
+      "model": "baseline_persistence",
+      "n_total": 24,
+      "n_used": 23,
+      "value": -0.045038347814958656
+    },
+    {
+      "family": "point",
+      "metric": "mae_mw",
+      "model": "baseline_seasonal_naive",
+      "n_total": 24,
+      "n_used": 23,
+      "value": 3.6700052901471496
+    },
+    {
+      "family": "point",
+      "metric": "rmse_mw",
+      "model": "baseline_seasonal_naive",
+      "n_total": 24,
+      "n_used": 23,
+      "value": 4.358466697717571
+    },
+    {
+      "family": "point",
+      "metric": "bias_mw",
+      "model": "baseline_seasonal_naive",
+      "n_total": 24,
+      "n_used": 23,
+      "value": 3.468385267789442
+    },
+    {
+      "family": "point",
+      "metric": "mae_mw",
+      "model": "baseline_historical_quantiles",
+      "n_total": 24,
+      "n_used": 23,
+      "value": 7.39614805477352
+    },
+    {
+      "family": "point",
+      "metric": "rmse_mw",
+      "model": "baseline_historical_quantiles",
+      "n_total": 24,
+      "n_used": 23,
+      "value": 9.237746843442912
+    },
+    {
+      "family": "point",
+      "metric": "bias_mw",
+      "model": "baseline_historical_quantiles",
+      "n_total": 24,
+      "n_used": 23,
+      "value": 5.166537290684498
+    },
+    {
+      "family": "pinball",
+      "metric": "pinball_loss_mw",
+      "model": "baseline_historical_quantiles",
+      "n_total": 24,
+      "n_used": 24,
+      "value": 2.6865800355802403
+    },
+    {
+      "family": "interval_0.8",
+      "metric": "coverage",
+      "model": "baseline_historical_quantiles",
+      "n_total": 24,
+      "n_used": 24,
+      "value": 0.6666666666666666
+    },
+    {
+      "family": "interval_0.8",
+      "metric": "mean_width_mw",
+      "model": "baseline_historical_quantiles",
+      "n_total": 24,
+      "n_used": 24,
+      "value": 20.726192655531733
+    },
+    {
+      "family": "interval_0.8",
+      "metric": "coverage_minus_nominal",
+      "model": "baseline_historical_quantiles",
+      "n_total": 24,
+      "n_used": 24,
+      "value": -0.1333333333333334
+    }
+  ],
+  "after_synthetic": [
+    {
+      "family": "point",
+      "metric": "mae_mw",
+      "model": "baseline_persistence",
+      "n_total": 24,
+      "n_used": 23,
+      "value": 7.189114497635484
+    },
+    {
+      "family": "point",
+      "metric": "rmse_mw",
+      "model": "baseline_persistence",
+      "n_total": 24,
+      "n_used": 23,
+      "value": 8.92011845341715
+    },
+    {
+      "family": "point",
+      "metric": "bias_mw",
+      "model": "baseline_persistence",
+      "n_total": 24,
+      "n_used": 23,
+      "value": -0.045038347814958656
+    },
+    {
+      "family": "point",
+      "metric": "mae_mw",
+      "model": "baseline_seasonal_naive",
+      "n_total": 24,
+      "n_used": 23,
+      "value": 3.6700052901471496
+    },
+    {
+      "family": "point",
+      "metric": "rmse_mw",
+      "model": "baseline_seasonal_naive",
+      "n_total": 24,
+      "n_used": 23,
+      "value": 4.358466697717571
+    },
+    {
+      "family": "point",
+      "metric": "bias_mw",
+      "model": "baseline_seasonal_naive",
+      "n_total": 24,
+      "n_used": 23,
+      "value": 3.468385267789442
+    },
+    {
+      "family": "point",
+      "metric": "mae_mw",
+      "model": "baseline_historical_quantiles",
+      "n_total": 24,
+      "n_used": 23,
+      "value": 7.39614805477352
+    },
+    {
+      "family": "point",
+      "metric": "rmse_mw",
+      "model": "baseline_historical_quantiles",
+      "n_total": 24,
+      "n_used": 23,
+      "value": 9.237746843442912
+    },
+    {
+      "family": "point",
+      "metric": "bias_mw",
+      "model": "baseline_historical_quantiles",
+      "n_total": 24,
+      "n_used": 23,
+      "value": 5.166537290684498
+    },
+    {
+      "family": "pinball",
+      "metric": "pinball_loss_mw",
+      "model": "baseline_historical_quantiles",
+      "n_total": 24,
+      "n_used": 24,
+      "value": 2.6865800355802403
+    },
+    {
+      "family": "interval_0.8",
+      "metric": "coverage",
+      "model": "baseline_historical_quantiles",
+      "n_total": 24,
+      "n_used": 24,
+      "value": 0.6666666666666666
+    },
+    {
+      "family": "interval_0.8",
+      "metric": "mean_width_mw",
+      "model": "baseline_historical_quantiles",
+      "n_total": 24,
+      "n_used": 24,
+      "value": 20.726192655531733
+    },
+    {
+      "family": "interval_0.8",
+      "metric": "coverage_minus_nominal",
+      "model": "baseline_historical_quantiles",
+      "n_total": 24,
+      "n_used": 24,
+      "value": -0.1333333333333334
+    }
+  ],
+  "demo_summaries_identical": true,
+  "cleanup": [
+    {
+      "path": "notebooks/README.md",
+      "action": "removed_obsolete_instructions",
+      "sha256": "ec1899d2d839d67a9dae5de8eb7365541aba6df6964d04d00b25183a7fd846bd"
+    },
+    {
+      "path": "requirements.txt",
+      "action": "replaced_duplicate_gpu_list_with_project_reference",
+      "backup": "archive/requirements_gpu_reference_20261121.txt"
+    }
+  ]
+}

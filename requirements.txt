@@ -1,0 +1,4 @@
+# Installazione del progetto: dipendenze definite una sola volta nel TOML.
+# Scegliere prima CPU/CUDA seguendo docs/setup.md.
+-c constraints.txt
+-e .[dev]

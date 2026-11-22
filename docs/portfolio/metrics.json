@@ -1,0 +1,2060 @@
+{
+  "schema_version": 1,
+  "generated_date": "2026-11-21",
+  "status": "release_candidate_documentation",
+  "new_inferences": 0,
+  "new_fits": 0,
+  "operational_validation": false,
+  "highlights": [
+    {
+      "study": "hourly_extension",
+      "target": "solar",
+      "metric": "mae",
+      "reference": "hour_of_day_distribution",
+      "before": 137.45048309178745,
+      "after": 131.6994561550122,
+      "change_pct": -4.184071825294932,
+      "origins": 69,
+      "cases": 1656
+    },
+    {
+      "study": "hourly_extension",
+      "target": "wind",
+      "metric": "mae",
+      "reference": "persistence",
+      "before": 763.1796875,
+      "after": 725.2626088725196,
+      "change_pct": -4.968302910640599,
+      "origins": 72,
+      "cases": 1728
+    },
+    {
+      "study": "hourly_calibration",
+      "target": "wind",
+      "metric": "pinball",
+      "reference": "timestral_5M",
+      "before": 213.24985373296852,
+      "after": 189.0442502996657,
+      "change_pct": -11.350818305185372,
+      "origins": 54,
+      "cases": 1296
+    }
+  ],
+  "studies": [
+    {
+      "id": "hourly_pilot",
+      "title": "Primo pilota orario",
+      "kind": "hourly",
+      "period": "Novembre 2024–ottobre 2026; giorno 15",
+      "unit": "MW",
+      "targets": {
+        "solar": {
+          "hour_of_day_distribution": {
+            "cases": 552,
+            "origins": 23,
+            "mae": 118.50769927536231,
+            "rmse": 246.82993637969955,
+            "bias": 52.11231884057971,
+            "pinball": 27.165861413043476,
+            "quantile_cases": 552,
+            "coverage_0.8": 0.8460144927536232,
+            "width_0.8": 352.09384057971016,
+            "coverage_0.9": 0.9039855072463768,
+            "width_0.9": 428.6217391304348
+          },
+          "lag_168h": {
+            "cases": 552,
+            "origins": 23,
+            "mae": 170.16440217391303,
+            "rmse": 367.2860092188849,
+            "bias": -9.071105072463768,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "lag_48h": {
+            "cases": 552,
+            "origins": 23,
+            "mae": 142.9134963768116,
+            "rmse": 303.9033956546036,
+            "bias": 8.101902173913043,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "persistence": {
+            "cases": 552,
+            "origins": 23,
+            "mae": 587.4705615942029,
+            "rmse": 1011.9640524970221,
+            "bias": -587.4705615942029,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "timestral_5M": {
+            "cases": 552,
+            "origins": 23,
+            "mae": 112.16122624494028,
+            "rmse": 226.41250996119666,
+            "bias": 30.80815074754798,
+            "pinball": 32.85303965499436,
+            "quantile_cases": 552,
+            "coverage_0.8": 0.7119565217391305,
+            "width_0.8": 216.8671296161154,
+            "coverage_0.9": 0.7989130434782609,
+            "width_0.9": 293.28403342979544
+          }
+        },
+        "wind": {
+          "hour_of_day_distribution": {
+            "cases": 576,
+            "origins": 24,
+            "mae": 912.4728732638889,
+            "rmse": 1189.0052801310305,
+            "bias": -359.36089409722223,
+            "pinball": 219.51114171006944,
+            "quantile_cases": 576,
+            "coverage_0.8": 0.6736111111111112,
+            "width_0.8": 2180.7341145833334,
+            "coverage_0.9": 0.7899305555555556,
+            "width_0.9": 2553.900282118055
+          },
+          "lag_168h": {
+            "cases": 576,
+            "origins": 24,
+            "mae": 1136.3441840277778,
+            "rmse": 1454.3681419719055,
+            "bias": -80.92925347222223,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "lag_48h": {
+            "cases": 576,
+            "origins": 24,
+            "mae": 1007.9079861111111,
+            "rmse": 1320.0248664337623,
+            "bias": -106.18923611111111,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "persistence": {
+            "cases": 576,
+            "origins": 24,
+            "mae": 951.3641493055555,
+            "rmse": 1252.500930213879,
+            "bias": -212.33897569444446,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "timestral_5M": {
+            "cases": 576,
+            "origins": 24,
+            "mae": 841.9545331531101,
+            "rmse": 1150.739090638961,
+            "bias": -363.42639933692084,
+            "pinball": 294.2758291549153,
+            "quantile_cases": 576,
+            "coverage_0.8": 0.3993055555555556,
+            "width_0.8": 1087.0450870460934,
+            "coverage_0.9": 0.5329861111111112,
+            "width_0.9": 1457.154078298145
+          }
+        }
+      },
+      "exclusions": [
+        {
+          "target": "solar",
+          "origin": "2026-04-15T00:00:00+00:00",
+          "reason": "Contesto incompleto: nessuna imputazione."
+        }
+      ]
+    },
+    {
+      "id": "hourly_extension",
+      "title": "Verifica su nuove giornate",
+      "kind": "hourly",
+      "period": "Novembre 2024–ottobre 2026; giorni 1, 8, 22",
+      "unit": "MW",
+      "targets": {
+        "solar": {
+          "hour_of_day_distribution": {
+            "cases": 1656,
+            "origins": 69,
+            "mae": 137.45048309178745,
+            "rmse": 293.29151745910787,
+            "bias": 30.737469806763286,
+            "pinball": 33.24036511171498,
+            "quantile_cases": 1656,
+            "coverage_0.8": 0.821256038647343,
+            "width_0.8": 355.0520984299516,
+            "coverage_0.9": 0.8653381642512077,
+            "width_0.9": 433.2982563405796
+          },
+          "lag_168h": {
+            "cases": 1656,
+            "origins": 69,
+            "mae": 159.97252415458937,
+            "rmse": 347.8716908792916,
+            "bias": 10.129830917874395,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "lag_48h": {
+            "cases": 1656,
+            "origins": 69,
+            "mae": 145.2278079710145,
+            "rmse": 320.5057462607675,
+            "bias": 24.226298309178745,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "persistence": {
+            "cases": 1656,
+            "origins": 69,
+            "mae": 606.9538043478261,
+            "rmse": 1036.508138814988,
+            "bias": -606.9538043478261,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "timestral_5M": {
+            "cases": 1656,
+            "origins": 69,
+            "mae": 131.6994561550122,
+            "rmse": 276.68960731091454,
+            "bias": 20.405244421843744,
+            "pinball": 39.45589290259541,
+            "quantile_cases": 1656,
+            "coverage_0.8": 0.6859903381642513,
+            "width_0.8": 214.89511029155935,
+            "coverage_0.9": 0.7856280193236715,
+            "width_0.9": 290.90308440019544
+          }
+        },
+        "wind": {
+          "hour_of_day_distribution": {
+            "cases": 1728,
+            "origins": 72,
+            "mae": 815.2896412037037,
+            "rmse": 1089.8284648470137,
+            "bias": -268.7873263888889,
+            "pinball": 182.0620328414352,
+            "quantile_cases": 1728,
+            "coverage_0.8": 0.71875,
+            "width_0.8": 2172.150419560185,
+            "coverage_0.9": 0.8269675925925926,
+            "width_0.9": 2546.902300347222
+          },
+          "lag_168h": {
+            "cases": 1728,
+            "origins": 72,
+            "mae": 982.1080729166666,
+            "rmse": 1335.0184783338268,
+            "bias": 27.290943287037038,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "lag_48h": {
+            "cases": 1728,
+            "origins": 72,
+            "mae": 829.89453125,
+            "rmse": 1105.6419816827836,
+            "bias": -109.02242476851852,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "persistence": {
+            "cases": 1728,
+            "origins": 72,
+            "mae": 763.1796875,
+            "rmse": 1025.7971812498731,
+            "bias": -58.25086805555556,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "timestral_5M": {
+            "cases": 1728,
+            "origins": 72,
+            "mae": 725.2626088725196,
+            "rmse": 968.0845830720103,
+            "bias": -232.7336494392819,
+            "pinball": 225.79626885652542,
+            "quantile_cases": 1728,
+            "coverage_0.8": 0.45891203703703703,
+            "width_0.8": 1189.3200332676922,
+            "coverage_0.9": 0.5821759259259259,
+            "width_0.9": 1566.6325898788593
+          }
+        }
+      },
+      "exclusions": [
+        {
+          "target": "solar",
+          "origin": "2026-04-08T00:00:00+00:00",
+          "reason": "Contesto incompleto: nessuna imputazione."
+        },
+        {
+          "target": "solar",
+          "origin": "2026-04-22T00:00:00+00:00",
+          "reason": "Contesto incompleto: nessuna imputazione."
+        },
+        {
+          "target": "solar",
+          "origin": "2026-05-01T00:00:00+00:00",
+          "reason": "Contesto incompleto: nessuna imputazione."
+        }
+      ]
+    },
+    {
+      "id": "hourly_calibration",
+      "title": "Calibrazione causale degli intervalli",
+      "kind": "calibration",
+      "period": "Maggio 2025–ottobre 2026; casi eleggibili",
+      "unit": "MW",
+      "targets": {
+        "solar": {
+          "hour_of_day_distribution": {
+            "cases": 864,
+            "origins": 36,
+            "mae": 136.4124710648148,
+            "rmse": 291.2365749133757,
+            "bias": 38.507957175925924,
+            "pinball": 34.46637123842593,
+            "quantile_cases": 864,
+            "coverage_0.8": 0.8252314814814815,
+            "width_0.8": 363.99609375,
+            "coverage_0.9": 0.8576388888888888,
+            "width_0.9": 444.89464699074074
+          },
+          "lag_168h": {
+            "cases": 864,
+            "origins": 36,
+            "mae": 168.36631944444446,
+            "rmse": 371.53548031994745,
+            "bias": 14.471643518518519,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "lag_48h": {
+            "cases": 864,
+            "origins": 36,
+            "mae": 154.12181712962962,
+            "rmse": 329.4745631682122,
+            "bias": 36.66637731481482,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "persistence": {
+            "cases": 864,
+            "origins": 36,
+            "mae": 601.2806712962963,
+            "rmse": 1022.3694380896833,
+            "bias": -601.2806712962963,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "timestral_5M": {
+            "cases": 864,
+            "origins": 36,
+            "mae": 141.8188097918475,
+            "rmse": 289.20043695155755,
+            "bias": 23.048141832704896,
+            "pinball": 41.85814974413977,
+            "quantile_cases": 864,
+            "coverage_0.8": 0.6724537037037037,
+            "width_0.8": 222.10457604019732,
+            "coverage_0.9": 0.7835648148148148,
+            "width_0.9": 301.6350104190685
+          },
+          "timestral_5M__additive_calibrated": {
+            "cases": 864,
+            "origins": 36,
+            "mae": 141.8188097918475,
+            "rmse": 289.20043695155755,
+            "bias": 23.048141832704896,
+            "pinball": 41.593184845006036,
+            "quantile_cases": 864,
+            "coverage_0.8": 0.7824074074074074,
+            "width_0.8": 265.8680003837303,
+            "coverage_0.9": 0.8958333333333334,
+            "width_0.9": 476.50952383323954
+          }
+        },
+        "wind": {
+          "hour_of_day_distribution": {
+            "cases": 1296,
+            "origins": 54,
+            "mae": 768.6159336419753,
+            "rmse": 1028.5769486663305,
+            "bias": -249.42824074074073,
+            "pinball": 175.18433217592596,
+            "quantile_cases": 1296,
+            "coverage_0.8": 0.7299382716049383,
+            "width_0.8": 2153.753838734568,
+            "coverage_0.9": 0.8302469135802469,
+            "width_0.9": 2522.9438657407404
+          },
+          "lag_168h": {
+            "cases": 1296,
+            "origins": 54,
+            "mae": 963.4126157407408,
+            "rmse": 1267.961151579775,
+            "bias": 13.052662037037036,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "lag_48h": {
+            "cases": 1296,
+            "origins": 54,
+            "mae": 884.7280092592592,
+            "rmse": 1157.071286147423,
+            "bias": -72.46952160493827,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "persistence": {
+            "cases": 1296,
+            "origins": 54,
+            "mae": 824.2978395061729,
+            "rmse": 1080.5924263560928,
+            "bias": 4.126157407407407,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "timestral_5M": {
+            "cases": 1296,
+            "origins": 54,
+            "mae": 707.337656562711,
+            "rmse": 942.9061223769966,
+            "bias": -177.1478830502357,
+            "pinball": 213.24985373296852,
+            "quantile_cases": 1296,
+            "coverage_0.8": 0.48225308641975306,
+            "width_0.8": 1225.4570873637258,
+            "coverage_0.9": 0.6064814814814815,
+            "width_0.9": 1613.996274618455
+          },
+          "timestral_5M__additive_calibrated": {
+            "cases": 1296,
+            "origins": 54,
+            "mae": 707.337656562711,
+            "rmse": 942.9061223769966,
+            "bias": -177.1478830502357,
+            "pinball": 189.0442502996657,
+            "quantile_cases": 1296,
+            "coverage_0.8": 0.7932098765432098,
+            "width_0.8": 2349.927563302311,
+            "coverage_0.9": 0.9027777777777778,
+            "width_0.9": 3456.519513189057
+          }
+        }
+      },
+      "decisions": {
+        "solar": {
+          "checks": {
+            "minimum_origins": true,
+            "point_predictions_unchanged": true,
+            "point_metrics_unchanged": true,
+            "pinball_reduction": false,
+            "pinball_vs_baseline": false,
+            "coverage_0.8": true,
+            "width_0.8": true,
+            "coverage_0.9": true,
+            "width_0.9": true
+          },
+          "all_pass": false,
+          "operational_promotion": false
+        },
+        "wind": {
+          "checks": {
+            "minimum_origins": true,
+            "point_predictions_unchanged": true,
+            "point_metrics_unchanged": true,
+            "pinball_reduction": true,
+            "pinball_vs_baseline": false,
+            "coverage_0.8": true,
+            "width_0.8": true,
+            "coverage_0.9": true,
+            "width_0.9": false
+          },
+          "all_pass": false,
+          "operational_promotion": false
+        }
+      },
+      "excluded_for_history": {
+        "solar": 15,
+        "wind": 0
+      },
+      "original_exclusions": {
+        "solar": [
+          {
+            "target": "solar",
+            "origin": "2026-04-08T00:00:00+00:00",
+            "reason": "Contesto incompleto: nessuna imputazione."
+          },
+          {
+            "target": "solar",
+            "origin": "2026-04-22T00:00:00+00:00",
+            "reason": "Contesto incompleto: nessuna imputazione."
+          },
+          {
+            "target": "solar",
+            "origin": "2026-05-01T00:00:00+00:00",
+            "reason": "Contesto incompleto: nessuna imputazione."
+          }
+        ],
+        "wind": []
+      }
+    },
+    {
+      "id": "monthly_original",
+      "title": "Confronto mensile originale",
+      "kind": "monthly",
+      "period": "Novembre 2024–ottobre 2026; mesi completi",
+      "unit": "MWh",
+      "targets": {
+        "solar": {
+          "last_complete_month": {
+            "cases": 23,
+            "origins": 24,
+            "mae": 145888.99589928536,
+            "rmse": 162539.27597789903,
+            "bias": -6458.662285447131,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "recent_complete_months": {
+            "cases": 23,
+            "origins": 24,
+            "mae": 192016.60576286816,
+            "rmse": 214610.91834829142,
+            "bias": -10361.24126630613,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "same_month_previous_year": {
+            "cases": 23,
+            "origins": 24,
+            "mae": 37415.98875562219,
+            "rmse": 46693.41322642619,
+            "bias": -25241.119940029985,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "seasonal_empirical_rolling_errors": {
+            "cases": 23,
+            "origins": 24,
+            "mae": 29156.016165822624,
+            "rmse": 39753.687022168044,
+            "bias": -7689.522763618172,
+            "pinball": 7943.190940934862,
+            "quantile_cases": 23,
+            "coverage_0.8": 0.8260869565217391,
+            "width_0.8": 114327.00828081924,
+            "coverage_0.9": 0.8695652173913043,
+            "width_0.9": 141855.54555273338
+          },
+          "timestral_28M_known_calendar": {
+            "cases": 23,
+            "origins": 24,
+            "mae": 32544.105267068615,
+            "rmse": 38177.86994902681,
+            "bias": -17393.295845363453,
+            "pinball": 7520.722377929688,
+            "quantile_cases": 23,
+            "coverage_0.8": 0.7391304347826086,
+            "width_0.8": 92271.696819803,
+            "coverage_0.9": 0.8260869565217391,
+            "width_0.9": 129960.41588824728
+          },
+          "timestral_28M_target_only": {
+            "cases": 23,
+            "origins": 24,
+            "mae": 39279.300887398094,
+            "rmse": 47118.638738831694,
+            "bias": -21490.150050951088,
+            "pinball": 9320.111440429688,
+            "quantile_cases": 23,
+            "coverage_0.8": 0.7391304347826086,
+            "width_0.8": 125029.19680918819,
+            "coverage_0.9": 0.9130434782608695,
+            "width_0.9": 176037.35576596466
+          },
+          "timestral_5M_known_calendar": {
+            "cases": 23,
+            "origins": 24,
+            "mae": 32926.856657608696,
+            "rmse": 41036.64749956431,
+            "bias": -25651.40238620924,
+            "pinball": 8876.787301715352,
+            "quantile_cases": 23,
+            "coverage_0.8": 0.6956521739130435,
+            "width_0.8": 102029.38419242528,
+            "coverage_0.9": 0.7391304347826086,
+            "width_0.9": 144887.41380774457
+          },
+          "timestral_5M_target_only": {
+            "cases": 23,
+            "origins": 24,
+            "mae": 34306.74854577106,
+            "rmse": 41947.675408564144,
+            "bias": -20560.416174847145,
+            "pinball": 8874.158959960938,
+            "quantile_cases": 23,
+            "coverage_0.8": 0.6956521739130435,
+            "width_0.8": 99251.75180451767,
+            "coverage_0.9": 0.782608695652174,
+            "width_0.9": 138897.10674252716
+          }
+        },
+        "wind": {
+          "last_complete_month": {
+            "cases": 24,
+            "origins": 24,
+            "mae": 273885.882906106,
+            "rmse": 322052.95351473475,
+            "bias": -14211.43268529186,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "recent_complete_months": {
+            "cases": 24,
+            "origins": 24,
+            "mae": 199707.77087098538,
+            "rmse": 245896.46838025862,
+            "bias": -19290.630211270694,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "same_month_previous_year": {
+            "cases": 24,
+            "origins": 24,
+            "mae": 225001.89762931035,
+            "rmse": 291736.6998005002,
+            "bias": -5318.498204022991,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "seasonal_empirical_rolling_errors": {
+            "cases": 24,
+            "origins": 24,
+            "mae": 232837.23074983002,
+            "rmse": 300654.17984507827,
+            "bias": 11398.843787464497,
+            "pinball": 65150.30633538857,
+            "quantile_cases": 24,
+            "coverage_0.8": 0.7083333333333334,
+            "width_0.8": 697729.8469618441,
+            "coverage_0.9": 0.7916666666666666,
+            "width_0.9": 874116.0723384488
+          },
+          "timestral_28M_known_calendar": {
+            "cases": 24,
+            "origins": 24,
+            "mae": 189628.62101236978,
+            "rmse": 228967.64524298298,
+            "bias": 1805.809326171875,
+            "pinball": 44520.268935953776,
+            "quantile_cases": 24,
+            "coverage_0.8": 0.7916666666666666,
+            "width_0.8": 550598.8844604492,
+            "coverage_0.9": 0.875,
+            "width_0.9": 747115.3803710938
+          },
+          "timestral_28M_target_only": {
+            "cases": 24,
+            "origins": 24,
+            "mae": 208452.36893717447,
+            "rmse": 248211.05738926376,
+            "bias": -25115.154418945312,
+            "pinball": 47691.07872477213,
+            "quantile_cases": 24,
+            "coverage_0.8": 0.7916666666666666,
+            "width_0.8": 626912.0035400391,
+            "coverage_0.9": 0.875,
+            "width_0.9": 835067.1047363281
+          },
+          "timestral_5M_known_calendar": {
+            "cases": 24,
+            "origins": 24,
+            "mae": 181868.2133992513,
+            "rmse": 218114.04802733354,
+            "bias": -174.92926025390625,
+            "pinball": 43952.50918619792,
+            "quantile_cases": 24,
+            "coverage_0.8": 0.8333333333333334,
+            "width_0.8": 620185.6018676758,
+            "coverage_0.9": 0.9166666666666666,
+            "width_0.9": 844806.9794921875
+          },
+          "timestral_5M_target_only": {
+            "cases": 24,
+            "origins": 24,
+            "mae": 203635.5782877604,
+            "rmse": 234825.69831696516,
+            "bias": -18922.26708984375,
+            "pinball": 45274.674271240234,
+            "quantile_cases": 24,
+            "coverage_0.8": 0.8333333333333334,
+            "width_0.8": 629348.9892578125,
+            "coverage_0.9": 0.9166666666666666,
+            "width_0.9": 846054.7733154297
+          }
+        }
+      },
+      "development": {
+        "solar": {
+          "last_complete_month": {
+            "cases": 11,
+            "origins": 11,
+            "mae": 112951.42077055316,
+            "rmse": 134028.33728974208,
+            "bias": -15901.590858529671,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "recent_complete_months": {
+            "cases": 11,
+            "origins": 11,
+            "mae": 154106.31159058333,
+            "rmse": 173607.78883347224,
+            "bias": -21488.343363158605,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "same_month_previous_year": {
+            "cases": 11,
+            "origins": 11,
+            "mae": 38440.99675324676,
+            "rmse": 47981.38024911858,
+            "bias": -23912.996753246767,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "seasonal_empirical_rolling_errors": {
+            "cases": 11,
+            "origins": 11,
+            "mae": 43480.80749726729,
+            "rmse": 50701.95459375428,
+            "bias": -17020.59353996024,
+            "pinball": 10819.011511310311,
+            "quantile_cases": 11,
+            "coverage_0.8": 0.8181818181818182,
+            "width_0.8": 129457.98816226778,
+            "coverage_0.9": 0.8181818181818182,
+            "width_0.9": 150210.11918866078
+          },
+          "timestral_28M_known_calendar": {
+            "cases": 11,
+            "origins": 11,
+            "mae": 29625.48075727983,
+            "rmse": 36456.678801862676,
+            "bias": 1965.6773126775568,
+            "pinball": 7249.79880526456,
+            "quantile_cases": 11,
+            "coverage_0.8": 0.6363636363636364,
+            "width_0.8": 109695.05027077415,
+            "coverage_0.9": 1.0,
+            "width_0.9": 152555.76875443893
+          },
+          "timestral_28M_target_only": {
+            "cases": 11,
+            "origins": 11,
+            "mae": 33995.59639115767,
+            "rmse": 40547.96476585336,
+            "bias": -3587.580499822443,
+            "pinball": 8600.591107732598,
+            "quantile_cases": 11,
+            "coverage_0.8": 1.0,
+            "width_0.8": 153559.33720259232,
+            "coverage_0.9": 1.0,
+            "width_0.9": 212984.47245649857
+          },
+          "timestral_5M_known_calendar": {
+            "cases": 11,
+            "origins": 11,
+            "mae": 36145.90274325284,
+            "rmse": 38769.44937107633,
+            "bias": -18683.42316228693,
+            "pinball": 8049.985856267756,
+            "quantile_cases": 11,
+            "coverage_0.8": 0.9090909090909091,
+            "width_0.8": 128430.3964399858,
+            "coverage_0.9": 1.0,
+            "width_0.9": 185860.55686257101
+          },
+          "timestral_5M_target_only": {
+            "cases": 11,
+            "origins": 11,
+            "mae": 32934.18268377131,
+            "rmse": 38906.10518331414,
+            "bias": -13344.712690873579,
+            "pinball": 7871.930413263495,
+            "quantile_cases": 11,
+            "coverage_0.8": 0.9090909090909091,
+            "width_0.8": 133971.0223721591,
+            "coverage_0.9": 1.0,
+            "width_0.9": 189477.67116477274
+          }
+        },
+        "wind": {
+          "last_complete_month": {
+            "cases": 4,
+            "origins": 11,
+            "mae": 173914.42284946237,
+            "rmse": 179518.0009646819,
+            "bias": 25379.793817204307,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "recent_complete_months": {
+            "cases": 4,
+            "origins": 11,
+            "mae": 187971.8717152413,
+            "rmse": 229239.54580877422,
+            "bias": 129960.13258480649,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "same_month_previous_year": {
+            "cases": 4,
+            "origins": 11,
+            "mae": 209262.25,
+            "rmse": 249261.93330159743,
+            "bias": 209262.25,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "seasonal_empirical_rolling_errors": {
+            "cases": 4,
+            "origins": 4,
+            "mae": 331358.76413773245,
+            "rmse": 357444.83300310484,
+            "bias": 331358.76413773245,
+            "pinball": 79999.78777318186,
+            "quantile_cases": 4,
+            "coverage_0.8": 0.5,
+            "width_0.8": 506067.0237903227,
+            "coverage_0.9": 0.5,
+            "width_0.9": 589425.1383602149
+          },
+          "timestral_28M_known_calendar": {
+            "cases": 4,
+            "origins": 11,
+            "mae": 152289.71606445312,
+            "rmse": 175275.20203712521,
+            "bias": 152289.71606445312,
+            "pinball": 34638.94886230469,
+            "quantile_cases": 4,
+            "coverage_0.8": 0.75,
+            "width_0.8": 502644.3739013672,
+            "coverage_0.9": 1.0,
+            "width_0.9": 683024.2902832031
+          },
+          "timestral_28M_target_only": {
+            "cases": 4,
+            "origins": 11,
+            "mae": 127313.38659667969,
+            "rmse": 167871.99717288706,
+            "bias": 122198.32702636719,
+            "pinball": 32203.596156005864,
+            "quantile_cases": 4,
+            "coverage_0.8": 1.0,
+            "width_0.8": 584079.0377197266,
+            "coverage_0.9": 1.0,
+            "width_0.9": 779067.6741943359
+          },
+          "timestral_5M_known_calendar": {
+            "cases": 4,
+            "origins": 11,
+            "mae": 152077.49645996094,
+            "rmse": 179412.51377344638,
+            "bias": 152077.49645996094,
+            "pinball": 34505.19600830079,
+            "quantile_cases": 4,
+            "coverage_0.8": 0.75,
+            "width_0.8": 514760.03942871094,
+            "coverage_0.9": 1.0,
+            "width_0.9": 700050.1311035156
+          },
+          "timestral_5M_target_only": {
+            "cases": 4,
+            "origins": 11,
+            "mae": 134113.44470214844,
+            "rmse": 160847.95138024195,
+            "bias": 119296.09509277344,
+            "pinball": 31265.038066406258,
+            "quantile_cases": 4,
+            "coverage_0.8": 1.0,
+            "width_0.8": 535470.0853271484,
+            "coverage_0.9": 1.0,
+            "width_0.9": 714429.1889648438
+          }
+        }
+      },
+      "excluded_point_timestamps": {
+        "solar": [
+          "2026-04-01T00:00:00+00:00"
+        ],
+        "wind": []
+      }
+    },
+    {
+      "id": "context_screen",
+      "title": "Screening contesti 12/24 mesi - solo sviluppo",
+      "kind": "context_screen",
+      "period": "Dicembre 2023–ottobre 2024; sviluppo comune",
+      "unit": "MWh",
+      "targets": {
+        "solar": {
+          "last_complete_month": {
+            "cases": 11,
+            "origins": 11,
+            "mae": 112951.42077055316,
+            "rmse": 134028.33728974208,
+            "bias": -15901.590858529671,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "recent_complete_months": {
+            "cases": 11,
+            "origins": 11,
+            "mae": 154106.31159058333,
+            "rmse": 173607.78883347224,
+            "bias": -21488.343363158605,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "same_month_previous_year": {
+            "cases": 11,
+            "origins": 11,
+            "mae": 38440.99675324676,
+            "rmse": 47981.38024911858,
+            "bias": -23912.996753246767,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "timestral_28M_known_calendar__ctx12": {
+            "cases": 11,
+            "origins": 11,
+            "mae": 67937.97878196022,
+            "rmse": 82343.23355282139,
+            "bias": -4564.219193892045,
+            "pinball": 16701.8105189098,
+            "quantile_cases": 11,
+            "coverage_0.8": 0.9090909090909091,
+            "width_0.8": 288949.0525568182,
+            "coverage_0.9": 1.0,
+            "width_0.9": 406749.8670543324
+          },
+          "timestral_28M_known_calendar__ctx24": {
+            "cases": 11,
+            "origins": 11,
+            "mae": 29625.48075727983,
+            "rmse": 36456.678801862676,
+            "bias": 1965.6773126775568,
+            "pinball": 7249.79880526456,
+            "quantile_cases": 11,
+            "coverage_0.8": 0.6363636363636364,
+            "width_0.8": 109695.05027077415,
+            "coverage_0.9": 1.0,
+            "width_0.9": 152555.76875443893
+          },
+          "timestral_28M_target_only__ctx12": {
+            "cases": 11,
+            "origins": 11,
+            "mae": 67798.11954012784,
+            "rmse": 81343.86156090013,
+            "bias": -4417.180575284091,
+            "pinball": 16079.155850053266,
+            "quantile_cases": 11,
+            "coverage_0.8": 0.8181818181818182,
+            "width_0.8": 261400.40711558948,
+            "coverage_0.9": 1.0,
+            "width_0.9": 375196.71812855115
+          },
+          "timestral_28M_target_only__ctx24": {
+            "cases": 11,
+            "origins": 11,
+            "mae": 33995.59639115767,
+            "rmse": 40547.96476585336,
+            "bias": -3587.580499822443,
+            "pinball": 8600.591107732598,
+            "quantile_cases": 11,
+            "coverage_0.8": 1.0,
+            "width_0.8": 153559.33720259232,
+            "coverage_0.9": 1.0,
+            "width_0.9": 212984.47245649857
+          },
+          "timestral_5M_known_calendar__ctx12": {
+            "cases": 11,
+            "origins": 11,
+            "mae": 66398.7480912642,
+            "rmse": 73629.84779322679,
+            "bias": -9567.890403053978,
+            "pinball": 15494.009398748225,
+            "quantile_cases": 11,
+            "coverage_0.8": 0.8181818181818182,
+            "width_0.8": 241598.07734818893,
+            "coverage_0.9": 1.0,
+            "width_0.9": 344426.6845925071
+          },
+          "timestral_5M_known_calendar__ctx24": {
+            "cases": 11,
+            "origins": 11,
+            "mae": 36145.90274325284,
+            "rmse": 38769.44937107633,
+            "bias": -18683.42316228693,
+            "pinball": 8049.985856267756,
+            "quantile_cases": 11,
+            "coverage_0.8": 0.9090909090909091,
+            "width_0.8": 128430.3964399858,
+            "coverage_0.9": 1.0,
+            "width_0.9": 185860.55686257101
+          },
+          "timestral_5M_target_only__ctx12": {
+            "cases": 11,
+            "origins": 11,
+            "mae": 71992.52789861505,
+            "rmse": 82416.96803139057,
+            "bias": -20946.592706853695,
+            "pinball": 15781.124923428619,
+            "quantile_cases": 11,
+            "coverage_0.8": 0.6363636363636364,
+            "width_0.8": 210379.40072354404,
+            "coverage_0.9": 0.9090909090909091,
+            "width_0.9": 296240.0809437145
+          },
+          "timestral_5M_target_only__ctx24": {
+            "cases": 11,
+            "origins": 11,
+            "mae": 32934.18268377131,
+            "rmse": 38906.10518331414,
+            "bias": -13344.712690873579,
+            "pinball": 7871.930413263495,
+            "quantile_cases": 11,
+            "coverage_0.8": 0.9090909090909091,
+            "width_0.8": 133971.0223721591,
+            "coverage_0.9": 1.0,
+            "width_0.9": 189477.67116477274
+          }
+        },
+        "wind": {
+          "last_complete_month": {
+            "cases": 11,
+            "origins": 11,
+            "mae": 174162.42183908046,
+            "rmse": 189738.57851497672,
+            "bias": 80497.8294637139,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "recent_complete_months": {
+            "cases": 11,
+            "origins": 11,
+            "mae": 222187.05281312895,
+            "rmse": 250859.6782085149,
+            "bias": 110750.55413789111,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "same_month_previous_year": {
+            "cases": 11,
+            "origins": 11,
+            "mae": 190335.6331168831,
+            "rmse": 222406.47953325626,
+            "bias": 25012.003246753244,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "timestral_28M_known_calendar__ctx12": {
+            "cases": 11,
+            "origins": 11,
+            "mae": 103570.41028941762,
+            "rmse": 136826.1510176614,
+            "bias": 55418.567338423294,
+            "pinball": 33610.043826793335,
+            "quantile_cases": 11,
+            "coverage_0.8": 1.0,
+            "width_0.8": 683226.2594105114,
+            "coverage_0.9": 1.0,
+            "width_0.9": 958847.7609641335
+          },
+          "timestral_28M_known_calendar__ctx24": {
+            "cases": 11,
+            "origins": 11,
+            "mae": 129271.05726207387,
+            "rmse": 148266.89273928822,
+            "bias": 47293.13805042614,
+            "pinball": 32328.471723188926,
+            "quantile_cases": 11,
+            "coverage_0.8": 0.9090909090909091,
+            "width_0.8": 552546.5166903409,
+            "coverage_0.9": 1.0,
+            "width_0.9": 743158.2254083807
+          },
+          "timestral_28M_target_only__ctx12": {
+            "cases": 11,
+            "origins": 11,
+            "mae": 173391.2364612926,
+            "rmse": 181460.79754087597,
+            "bias": 23197.036177201706,
+            "pinball": 41156.425868696744,
+            "quantile_cases": 11,
+            "coverage_0.8": 1.0,
+            "width_0.8": 704705.0553089489,
+            "coverage_0.9": 1.0,
+            "width_0.9": 972320.1116388495
+          },
+          "timestral_28M_target_only__ctx24": {
+            "cases": 11,
+            "origins": 11,
+            "mae": 140736.31494140625,
+            "rmse": 164921.77920341238,
+            "bias": 44300.99107776989,
+            "pinball": 35608.74842418324,
+            "quantile_cases": 11,
+            "coverage_0.8": 1.0,
+            "width_0.8": 645213.6214932528,
+            "coverage_0.9": 1.0,
+            "width_0.9": 863084.4500177557
+          },
+          "timestral_5M_known_calendar__ctx12": {
+            "cases": 11,
+            "origins": 11,
+            "mae": 142088.46044921875,
+            "rmse": 174502.44873397407,
+            "bias": 33940.40025745739,
+            "pinball": 38630.35349698154,
+            "quantile_cases": 11,
+            "coverage_0.8": 1.0,
+            "width_0.8": 704659.7982954546,
+            "coverage_0.9": 1.0,
+            "width_0.9": 1032831.1486150568
+          },
+          "timestral_5M_known_calendar__ctx24": {
+            "cases": 11,
+            "origins": 11,
+            "mae": 139755.42498224432,
+            "rmse": 164827.99751235693,
+            "bias": 21933.13103693182,
+            "pinball": 34467.07266024503,
+            "quantile_cases": 11,
+            "coverage_0.8": 0.8181818181818182,
+            "width_0.8": 564109.880859375,
+            "coverage_0.9": 1.0,
+            "width_0.9": 769663.8892489347
+          },
+          "timestral_5M_target_only__ctx12": {
+            "cases": 11,
+            "origins": 11,
+            "mae": 158053.2626509233,
+            "rmse": 177487.85590243433,
+            "bias": 22678.762739701706,
+            "pinball": 37383.37299937855,
+            "quantile_cases": 11,
+            "coverage_0.8": 0.8181818181818182,
+            "width_0.8": 630133.2730823864,
+            "coverage_0.9": 1.0,
+            "width_0.9": 876044.3790394176
+          },
+          "timestral_5M_target_only__ctx24": {
+            "cases": 11,
+            "origins": 11,
+            "mae": 138844.20157137784,
+            "rmse": 163065.06358971,
+            "bias": 15215.02294921875,
+            "pinball": 35121.38383500533,
+            "quantile_cases": 11,
+            "coverage_0.8": 1.0,
+            "width_0.8": 631100.4172585227,
+            "coverage_0.9": 1.0,
+            "width_0.9": 861495.5332697089
+          }
+        }
+      },
+      "evaluation_phase": "development_only_not_independent_test"
+    },
+    {
+      "id": "monthly_calibration_development",
+      "title": "Calibrazione eolica mensile - nove mesi di sviluppo",
+      "kind": "development",
+      "period": "Febbraio–ottobre 2024; nove mesi comuni",
+      "unit": "MWh",
+      "targets": {
+        "wind": {
+          "last_complete_month": {
+            "cases": 9,
+            "origins": 9,
+            "mae": 180328.40446998723,
+            "rmse": 195180.7400347813,
+            "bias": 114313.01378898363,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "recent_complete_months": {
+            "cases": 9,
+            "origins": 9,
+            "mae": 216353.3684990533,
+            "rmse": 251369.8072067515,
+            "bias": 190570.3733299712,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "same_month_previous_year": {
+            "cases": 9,
+            "origins": 9,
+            "mae": 164626.996031746,
+            "rmse": 196627.39239404738,
+            "bias": 98575.67063492064,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "timestral_28M_known_calendar__ctx12": {
+            "cases": 9,
+            "origins": 9,
+            "mae": 96429.84749348958,
+            "rmse": 132138.40762984628,
+            "bias": 84918.16813151042,
+            "pinball": 32120.821710611985,
+            "quantile_cases": 9,
+            "coverage_0.8": 1.0,
+            "width_0.8": 659228.6139322916,
+            "coverage_0.9": 1.0,
+            "width_0.9": 929326.4682617188
+          },
+          "timestral_28M_known_calendar__ctx12__calibrated": {
+            "cases": 9,
+            "origins": 9,
+            "mae": 96429.84749348958,
+            "rmse": 132138.40762984628,
+            "bias": 84918.16813151042,
+            "pinball": 30890.496036182205,
+            "quantile_cases": 9,
+            "coverage_0.8": 0.8888888888888888,
+            "width_0.8": 613809.9947418352,
+            "coverage_0.9": 1.0,
+            "width_0.9": 865303.5895961187
+          },
+          "timestral_28M_known_calendar__ctx24": {
+            "cases": 9,
+            "origins": 9,
+            "mae": 117926.70496961806,
+            "rmse": 140117.13460393404,
+            "bias": 97873.97819010417,
+            "pinball": 30806.513139105908,
+            "quantile_cases": 9,
+            "coverage_0.8": 0.8888888888888888,
+            "width_0.8": 534696.2796223959,
+            "coverage_0.9": 1.0,
+            "width_0.9": 719687.3994140625
+          }
+        }
+      },
+      "evaluation_phase": "development_only_not_independent_test"
+    },
+    {
+      "id": "monthly_final",
+      "title": "Ultimo confronto eolico mensile",
+      "kind": "final_monthly",
+      "period": "Novembre 2024–ottobre 2026; 24 mesi",
+      "unit": "MWh",
+      "targets": {
+        "wind": {
+          "last_complete_month": {
+            "cases": 24,
+            "origins": 24,
+            "mae": 273885.882906106,
+            "rmse": 322052.95351473475,
+            "bias": -14211.43268529186,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "recent_complete_months": {
+            "cases": 24,
+            "origins": 24,
+            "mae": 199707.77087098538,
+            "rmse": 245896.46838025862,
+            "bias": -19290.630211270694,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "same_month_previous_year": {
+            "cases": 24,
+            "origins": 24,
+            "mae": 225001.89762931035,
+            "rmse": 291736.6998005002,
+            "bias": -5318.498204022991,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "seasonal_empirical_rolling_errors": {
+            "cases": 24,
+            "origins": 24,
+            "mae": 232837.23074983002,
+            "rmse": 300654.17984507827,
+            "bias": 11398.843787464497,
+            "pinball": 65150.30633538857,
+            "quantile_cases": 24,
+            "coverage_0.8": 0.7083333333333334,
+            "width_0.8": 697729.8469618441,
+            "coverage_0.9": 0.7916666666666666,
+            "width_0.9": 874116.0723384488
+          },
+          "timestral_28M_known_calendar__ctx12": {
+            "cases": 24,
+            "origins": 24,
+            "mae": 225871.72123209634,
+            "rmse": 267767.11849190615,
+            "bias": 25055.194213867188,
+            "pinball": 55849.66391337077,
+            "quantile_cases": 24,
+            "coverage_0.8": 0.875,
+            "width_0.8": 759420.9512939453,
+            "coverage_0.9": 0.9166666666666666,
+            "width_0.9": 1100984.6567993164
+          },
+          "timestral_28M_known_calendar__ctx12__calibrated": {
+            "cases": 24,
+            "origins": 24,
+            "mae": 225871.72123209634,
+            "rmse": 267767.11849190615,
+            "bias": 25055.194213867188,
+            "pinball": 55398.48611319583,
+            "quantile_cases": 24,
+            "coverage_0.8": 0.875,
+            "width_0.8": 710369.920807063,
+            "coverage_0.9": 0.875,
+            "width_0.9": 1030130.04977924
+          },
+          "timestral_28M_known_calendar__ctx24": {
+            "cases": 24,
+            "origins": 24,
+            "mae": 189628.62101236978,
+            "rmse": 228967.64524298298,
+            "bias": 1805.809326171875,
+            "pinball": 44520.268935953776,
+            "quantile_cases": 24,
+            "coverage_0.8": 0.7916666666666666,
+            "width_0.8": 550598.8844604492,
+            "coverage_0.9": 0.875,
+            "width_0.9": 747115.3803710938
+          },
+          "timestral_28M_target_only__ctx24": {
+            "cases": 24,
+            "origins": 24,
+            "mae": 208452.36893717447,
+            "rmse": 248211.05738926376,
+            "bias": -25115.154418945312,
+            "pinball": 47691.07872477213,
+            "quantile_cases": 24,
+            "coverage_0.8": 0.7916666666666666,
+            "width_0.8": 626912.0035400391,
+            "coverage_0.9": 0.875,
+            "width_0.9": 835067.1047363281
+          },
+          "timestral_5M_known_calendar__ctx24": {
+            "cases": 24,
+            "origins": 24,
+            "mae": 181868.2133992513,
+            "rmse": 218114.04802733354,
+            "bias": -174.92926025390625,
+            "pinball": 43952.50918619792,
+            "quantile_cases": 24,
+            "coverage_0.8": 0.8333333333333334,
+            "width_0.8": 620185.6018676758,
+            "coverage_0.9": 0.9166666666666666,
+            "width_0.9": 844806.9794921875
+          },
+          "timestral_5M_target_only__ctx24": {
+            "cases": 24,
+            "origins": 24,
+            "mae": 203635.5782877604,
+            "rmse": 234825.69831696516,
+            "bias": -18922.26708984375,
+            "pinball": 45274.674271240234,
+            "quantile_cases": 24,
+            "coverage_0.8": 0.8333333333333334,
+            "width_0.8": 629348.9892578125,
+            "coverage_0.9": 0.9166666666666666,
+            "width_0.9": 846054.7733154297
+          }
+        }
+      },
+      "decision": {
+        "gates": {
+          "minimum_point_cases": true,
+          "minimum_quantile_cases": true,
+          "mae_vs_timestral_28M_known_calendar__ctx24": false,
+          "mae_vs_last_complete_month": true,
+          "mae_vs_recent_complete_months": false,
+          "mae_vs_same_month_previous_year": false,
+          "mae_vs_seasonal_empirical_rolling_errors": false,
+          "rmse": false,
+          "pinball_vs_timestral_28M_known_calendar__ctx24": false,
+          "pinball_vs_seasonal_empirical_rolling_errors": true,
+          "monthly_wins": false,
+          "coverage_0.8": true,
+          "width_0.8": false,
+          "coverage_0.9": true,
+          "width_0.9": false
+        },
+        "all_pass": false,
+        "wins": 7,
+        "point_cases": 24,
+        "quantile_cases": 24,
+        "required_wins": 15,
+        "operational_promotion": false
+      }
+    },
+    {
+      "id": "load_residual",
+      "title": "Carico e carico residuo mensili",
+      "kind": "monthly",
+      "period": "Novembre 2024–ottobre 2026; mesi completi",
+      "unit": "MWh",
+      "targets": {
+        "load": {
+          "last_complete_month": {
+            "cases": 24,
+            "origins": 24,
+            "mae": 250230.3297251024,
+            "rmse": 336497.017664158,
+            "bias": -11543.566108230929,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "recent_complete_months": {
+            "cases": 24,
+            "origins": 24,
+            "mae": 248659.94244635198,
+            "rmse": 339424.3861519277,
+            "bias": -17150.60489354147,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "same_month_previous_year": {
+            "cases": 24,
+            "origins": 24,
+            "mae": 92190.04956896549,
+            "rmse": 157165.02775859108,
+            "bias": -48502.17959770115,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "seasonal_empirical_rolling_errors": {
+            "cases": 24,
+            "origins": 24,
+            "mae": 89940.94358346522,
+            "rmse": 156413.29638504033,
+            "bias": 454.4990872657315,
+            "pinball": 29927.508539154893,
+            "quantile_cases": 24,
+            "coverage_0.8": 0.875,
+            "width_0.8": 264495.55262128776,
+            "coverage_0.9": 0.9166666666666666,
+            "width_0.9": 334364.3656160392
+          },
+          "timestral_28M_known_calendar": {
+            "cases": 24,
+            "origins": 24,
+            "mae": 89995.45076497395,
+            "rmse": 133438.30640295282,
+            "bias": -45560.057779947914,
+            "pinball": 25608.68077636719,
+            "quantile_cases": 24,
+            "coverage_0.8": 0.875,
+            "width_0.8": 322250.3190917969,
+            "coverage_0.9": 0.9166666666666666,
+            "width_0.9": 461411.30419921875
+          },
+          "timestral_28M_target_only": {
+            "cases": 24,
+            "origins": 24,
+            "mae": 113820.14143880208,
+            "rmse": 163072.79590691585,
+            "bias": -63617.28946940104,
+            "pinball": 27368.240510253905,
+            "quantile_cases": 24,
+            "coverage_0.8": 0.8333333333333334,
+            "width_0.8": 341692.0352783203,
+            "coverage_0.9": 0.9166666666666666,
+            "width_0.9": 474954.873046875
+          },
+          "timestral_5M_known_calendar": {
+            "cases": 24,
+            "origins": 24,
+            "mae": 112203.90979003906,
+            "rmse": 149672.24466950473,
+            "bias": -68446.31229654948,
+            "pinball": 27319.56920817058,
+            "quantile_cases": 24,
+            "coverage_0.8": 0.8333333333333334,
+            "width_0.8": 366472.8439941406,
+            "coverage_0.9": 0.9166666666666666,
+            "width_0.9": 526915.8344726562
+          },
+          "timestral_5M_target_only": {
+            "cases": 24,
+            "origins": 24,
+            "mae": 113067.89135742188,
+            "rmse": 155897.10162474905,
+            "bias": -63415.777506510414,
+            "pinball": 27656.332613932296,
+            "quantile_cases": 24,
+            "coverage_0.8": 0.8333333333333334,
+            "width_0.8": 364115.9542236328,
+            "coverage_0.9": 0.9166666666666666,
+            "width_0.9": 517991.5344238281
+          }
+        },
+        "residual_load": {
+          "last_complete_month": {
+            "cases": 23,
+            "origins": 24,
+            "mae": 392656.77104955586,
+            "rmse": 497088.31496469653,
+            "bias": 23520.597720897615,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "recent_complete_months": {
+            "cases": 23,
+            "origins": 24,
+            "mae": 383365.44647475897,
+            "rmse": 444459.42548565724,
+            "bias": 6008.77638173756,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "same_month_previous_year": {
+            "cases": 23,
+            "origins": 24,
+            "mae": 296923.525862069,
+            "rmse": 372834.2692955016,
+            "bias": -18854.0476011994,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "seasonal_empirical_rolling_errors": {
+            "cases": 23,
+            "origins": 24,
+            "mae": 305336.97966057295,
+            "rmse": 381594.4319693418,
+            "bias": 24137.734154293776,
+            "pinball": 85462.89780556064,
+            "quantile_cases": 23,
+            "coverage_0.8": 0.6086956521739131,
+            "width_0.8": 763693.3534759233,
+            "coverage_0.9": 0.6956521739130435,
+            "width_0.9": 947303.7126052801
+          },
+          "timestral_28M_known_calendar": {
+            "cases": 23,
+            "origins": 24,
+            "mae": 279769.0784752887,
+            "rmse": 332545.02998210554,
+            "bias": 1328.3086255944293,
+            "pinball": 64329.566629373294,
+            "quantile_cases": 23,
+            "coverage_0.8": 0.6956521739130435,
+            "width_0.8": 813954.0605999491,
+            "coverage_0.9": 0.8695652173913043,
+            "width_0.9": 1124335.9261421536
+          },
+          "timestral_28M_target_only": {
+            "cases": 23,
+            "origins": 24,
+            "mae": 301211.93126910663,
+            "rmse": 381225.72636540484,
+            "bias": -14503.236805791441,
+            "pinball": 71007.13899010699,
+            "quantile_cases": 23,
+            "coverage_0.8": 0.6521739130434783,
+            "width_0.8": 914972.0014223845,
+            "coverage_0.9": 0.9130434782608695,
+            "width_0.9": 1237878.6244055706
+          },
+          "timestral_5M_known_calendar": {
+            "cases": 23,
+            "origins": 24,
+            "mae": 257941.99680494226,
+            "rmse": 327407.1229632069,
+            "bias": -30544.16012440557,
+            "pinball": 63078.32671524711,
+            "quantile_cases": 23,
+            "coverage_0.8": 0.782608695652174,
+            "width_0.8": 853809.5705247961,
+            "coverage_0.9": 0.9130434782608695,
+            "width_0.9": 1188574.8149732507
+          },
+          "timestral_5M_target_only": {
+            "cases": 23,
+            "origins": 24,
+            "mae": 287386.625615659,
+            "rmse": 354915.36507242796,
+            "bias": -23092.09481148098,
+            "pinball": 67315.05479874322,
+            "quantile_cases": 23,
+            "coverage_0.8": 0.6521739130434783,
+            "width_0.8": 876628.0585725204,
+            "coverage_0.9": 0.9130434782608695,
+            "width_0.9": 1205943.3337296196
+          }
+        }
+      },
+      "development": {
+        "load": {
+          "last_complete_month": {
+            "cases": 11,
+            "origins": 11,
+            "mae": 283940.2896012405,
+            "rmse": 365806.19395799626,
+            "bias": -19780.15692857384,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "recent_complete_months": {
+            "cases": 11,
+            "origins": 11,
+            "mae": 252182.55634582805,
+            "rmse": 348267.2363318856,
+            "bias": -49212.756384919485,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "same_month_previous_year": {
+            "cases": 11,
+            "origins": 11,
+            "mae": 95547.6331168831,
+            "rmse": 117115.06188726221,
+            "bias": -83441.81493506496,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "seasonal_empirical_rolling_errors": {
+            "cases": 11,
+            "origins": 11,
+            "mae": 138309.7252500372,
+            "rmse": 168404.96150026438,
+            "bias": -87782.34067771313,
+            "pinball": 31755.284414739792,
+            "quantile_cases": 11,
+            "coverage_0.8": 1.0,
+            "width_0.8": 569982.3212023458,
+            "coverage_0.9": 1.0,
+            "width_0.9": 652466.5465689148
+          },
+          "timestral_28M_known_calendar": {
+            "cases": 11,
+            "origins": 11,
+            "mae": 80254.42329545454,
+            "rmse": 109351.31697005196,
+            "bias": 4563.258345170455,
+            "pinball": 21362.949247159097,
+            "quantile_cases": 11,
+            "coverage_0.8": 1.0,
+            "width_0.8": 394985.70569957385,
+            "coverage_0.9": 1.0,
+            "width_0.9": 543779.2803622159
+          },
+          "timestral_28M_target_only": {
+            "cases": 11,
+            "origins": 11,
+            "mae": 131898.3544921875,
+            "rmse": 183182.37547317363,
+            "bias": -16147.944513494318,
+            "pinball": 33132.40613458808,
+            "quantile_cases": 11,
+            "coverage_0.8": 0.8181818181818182,
+            "width_0.8": 469543.8467684659,
+            "coverage_0.9": 0.9090909090909091,
+            "width_0.9": 640390.2166193182
+          },
+          "timestral_5M_known_calendar": {
+            "cases": 11,
+            "origins": 11,
+            "mae": 62419.403852982956,
+            "rmse": 92355.70752539375,
+            "bias": -30068.737659801136,
+            "pinball": 19394.538872514204,
+            "quantile_cases": 11,
+            "coverage_0.8": 1.0,
+            "width_0.8": 383976.52015269885,
+            "coverage_0.9": 1.0,
+            "width_0.9": 547306.8084161932
+          },
+          "timestral_5M_target_only": {
+            "cases": 11,
+            "origins": 11,
+            "mae": 78017.06942471591,
+            "rmse": 111024.59405227785,
+            "bias": -18908.155717329544,
+            "pinball": 21632.04164861506,
+            "quantile_cases": 11,
+            "coverage_0.8": 1.0,
+            "width_0.8": 405972.5177556818,
+            "coverage_0.9": 1.0,
+            "width_0.9": 571088.4351029829
+          }
+        },
+        "residual_load": {
+          "last_complete_month": {
+            "cases": 4,
+            "origins": 11,
+            "mae": 621681.1282258064,
+            "rmse": 657231.4302609356,
+            "bias": -156762.32177419355,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "recent_complete_months": {
+            "cases": 4,
+            "origins": 11,
+            "mae": 542245.721273292,
+            "rmse": 692914.2895742761,
+            "bias": -422881.99301242235,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "same_month_previous_year": {
+            "cases": 4,
+            "origins": 11,
+            "mae": 251580.75,
+            "rmse": 340727.5779523137,
+            "bias": -251580.75,
+            "pinball": null,
+            "quantile_cases": null,
+            "coverage_0.8": null,
+            "width_0.8": null,
+            "coverage_0.9": null,
+            "width_0.9": null
+          },
+          "seasonal_empirical_rolling_errors": {
+            "cases": 4,
+            "origins": 4,
+            "mae": 259202.20215053757,
+            "rmse": 344689.13182954217,
+            "bias": -259202.20215053757,
+            "pinball": 75563.61609623655,
+            "quantile_cases": 4,
+            "coverage_0.8": 0.75,
+            "width_0.8": 441948.5775,
+            "coverage_0.9": 0.75,
+            "width_0.9": 545027.7997849461
+          },
+          "timestral_28M_known_calendar": {
+            "cases": 4,
+            "origins": 11,
+            "mae": 263907.6358642578,
+            "rmse": 334124.66292721353,
+            "bias": -256763.29162597656,
+            "pinball": 75163.5509552002,
+            "quantile_cases": 4,
+            "coverage_0.8": 0.75,
+            "width_0.8": 755619.5939941406,
+            "coverage_0.9": 0.75,
+            "width_0.9": 1034345.2520141602
+          },
+          "timestral_28M_target_only": {
+            "cases": 4,
+            "origins": 11,
+            "mae": 324605.9968261719,
+            "rmse": 423399.19799147046,
+            "bias": -319538.2268066406,
+            "pinball": 90365.26239410401,
+            "quantile_cases": 4,
+            "coverage_0.8": 0.5,
+            "width_0.8": 836244.3045043945,
+            "coverage_0.9": 0.5,
+            "width_0.9": 1136324.0488586426
+          },
+          "timestral_5M_known_calendar": {
+            "cases": 4,
+            "origins": 11,
+            "mae": 365158.2889404297,
+            "rmse": 404972.3325818844,
+            "bias": -365158.2889404297,
+            "pinball": 73290.80927154541,
+            "quantile_cases": 4,
+            "coverage_0.8": 0.5,
+            "width_0.8": 836732.6038513184,
+            "coverage_0.9": 1.0,
+            "width_0.9": 1195120.80368042
+          },
+          "timestral_5M_target_only": {
+            "cases": 4,
+            "origins": 11,
+            "mae": 440219.31048583984,
+            "rmse": 540910.4912776889,
+            "bias": -440219.31048583984,
+            "pinball": 128377.27172241212,
+            "quantile_cases": 4,
+            "coverage_0.8": 0.5,
+            "width_0.8": 834351.424987793,
+            "coverage_0.9": 0.5,
+            "width_0.9": 1172796.251586914
+          }
+        }
+      },
+      "excluded_point_timestamps": {
+        "load": [],
+        "residual_load": [
+          "2026-04-01T00:00:00+00:00"
+        ]
+      }
+    }
+  ],
+  "provenance": [
+    {
+      "study": "hourly_pilot",
+      "results_sha256": "d96d3f3371a524b1b1b2f08e3099b5fb379cd6492edcffd8d4efcb27abce6f22",
+      "manifest_sha256": "e38b3e2002d6b372193653071a4df213c8744fe19e85ff6c4065d9be031eb7d5"
+    },
+    {
+      "study": "hourly_extension",
+      "results_sha256": "748a0f81ccb7df1329ff7d0bffaaff1b76058a368f24ad72d6deff679d93ba32",
+      "manifest_sha256": "1ed1a1b2358030ecb2c4423a789469e8b84d5458b5f2579adc4d9fbc0e55fb03"
+    },
+    {
+      "study": "hourly_calibration",
+      "results_sha256": "ab5c765831b0901d0403c9d0653a52b998abc8d1643331fc6be902841a19acff",
+      "manifest_sha256": "34042570e5f547bab2d583aa63d257ca8f6603133906e653e6589f410e1fe14d"
+    },
+    {
+      "study": "monthly_original",
+      "results_sha256": "a72c02803eff1a24068301341fc10e4d94176a89035e9a1a1dc85c679de8de92",
+      "manifest_sha256": "fd2c31ab43f0d083a2c7e1180c7d6b8e9850ec84262b7995afab2f9a6de99b9a"
+    },
+    {
+      "study": "context_screen",
+      "results_sha256": "14925bdd71c6cc621d36ca9b623670461be1bdaa0c3c9c58c3dad074cc10a7b9",
+      "manifest_sha256": "a2eaaea5b4a88262a562192506fb7efa7c9d476e80c4974359cefb4e3e4e213a"
+    },
+    {
+      "study": "monthly_calibration_development",
+      "results_sha256": "c97b2817f9e93f10943b85491c4914a28b04a252d30f51e94e898c4c2120aa91",
+      "manifest_sha256": "fa96aea3a712f63f61ab7f010d983809545a14affd5309a3ebf2c63a83da24e9"
+    },
+    {
+      "study": "monthly_final",
+      "results_sha256": "41268f7b611ddcc1a1c5db2d849c01e2d3dd74e0d5c4b6f2e672b1b006ef3038",
+      "manifest_sha256": "fc33006754206ece3f9b52346e3567d96bd734bbf77afbec592ac876a754dce5"
+    },
+    {
+      "study": "load_residual",
+      "results_sha256": "dcb559d8ea4fc8b361b9a206b951d263ea6189ccd9a0fc14e5605f7ffe85d782",
+      "manifest_sha256": "66b507ad378dc90b0b680d6240060420bde4bbb0ed3db06b7e5aea368db0e150"
+    }
+  ]
+}

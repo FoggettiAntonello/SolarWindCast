@@ -1,0 +1,9 @@
+# Codice e documentazione con fine riga stabile.
+* text=auto eol=lf
+
+# Questi file hanno hash verificati: conservarli byte per byte su ogni sistema.
+docs/portfolio/** -text
+docs/licenses/Timestral-*_LICENSE.txt -text
+src/solarwindcast/assets/*.svg -text
+*.png binary
+*.pptx binary

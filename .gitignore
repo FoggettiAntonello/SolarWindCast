@@ -1,0 +1,43 @@
+# Ambiente e segreti
+.venv/
+venv/
+.vscode/
+_site/
+.release/
+.env
+.env.*
+!.env.example
+
+# Cache e file generati da Python e strumenti
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+htmlcov/
+.ipynb_checkpoints/
+*.egg-info/
+build/
+dist/
+
+# Dataset e cache: conserva soltanto cartelle e documentazione
+data/**
+!data/**/
+!data/README.md
+!data/**/README.md
+
+# Output sperimentali: conserva la documentazione Markdown
+reports/**
+!reports/**/
+!reports/**/*.md
+
+# Archivio locale dei prototipi, inclusi dati e risultati precedenti
+archive/**
+!archive/README.md
+
+# File temporanei del sistema operativo
+Thumbs.db
+.DS_Store
+*.tmp
