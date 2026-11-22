@@ -17,6 +17,9 @@ sui modelli, sui dati o sulle immagini di terzi.
   [Provenienza](docs/licenses/geographic_visual.md).
 - **Sfondo:** illustrazione generata con imagegen; non rappresenta un sito
   reale. [Prompt e provenienza](docs/licenses/presentation_background.md).
+- **Ritratto autore:** foto fornita dall’utente e incorporata nella copertina
+  di PowerPoint/PDF, senza alterare il contenuto originale. Non è inclusa
+  nella licenza MIT del codice.
 - **Nomi dei servizi:** ENTSO-E e Open-Meteo sono riferimenti alle fonti, non
   indicazioni di affiliazione. I pittogrammi del progetto non sono loghi ufficiali.
 

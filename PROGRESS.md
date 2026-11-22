@@ -10,7 +10,11 @@ deformazioni.13slide totali,12scientifiche nello stesso ordine.9grafici e
 9workbook identici byte per byte; testi scientifici invariati. PowerPoint/PDF
 rigenerati e copertina renderizzata con Office, verificata visivamente.
 Nuovo SHA256PPT: 5cc00e8d0505b729fe1d2cbee7652b78a79fc9b5496d1a5542abe3c2a5a3dd77.
-Pubblicazione delle sole due copie documento in corso; homepage non modificata.
+Pubblicazione delle sole due copie documento conclusa; homepage non modificata.
+Commit sito a411c10, Pages45051456930 superato; PDF/PPT pubblici HTTP200 e
+hash coincidenti con le copie verificate. CI604be5d superata:
+https://github.com/FoggettiAntonello/SolarWindCast/actions/runs/45051464976
+Sette test mirati passati e audit senza rilevamenti.
 Metriche invariate,zero inferenze/fit. Release finale ancora da chiudere.
 
 
