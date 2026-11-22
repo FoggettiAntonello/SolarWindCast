@@ -4,13 +4,18 @@
 schema_version: 1
 
 release_v1:
-  frozen_powerpoint_sha256: "83873a7601eb404501acca0d5c0bca4aa8edfa766678a7a0056a0e4f71bbabdb"
-  status: "GITHUB PUBBLICATO E CI CPU SUPERATA - AZURE DA COMPLETARE"
+  frozen_powerpoint_sha256: "dfdb85878d753b0c8671493712954b86795964d37bc5dd59131371fb82c74298"
+  status: "GITHUB E SITO PERSONALE PUBBLICATI - PRESENTAZIONE 13 SLIDE"
   github_repository: https://github.com/FoggettiAntonello/SolarWindCast
   project_license: MIT
   presentation_format: "html_slides"
   presentation_max_slides: 13
   presentation_slide_count: 12
+  powerpoint_slide_count: 13
+  presenter:
+    name: Antonello Foggetti
+    email: antonello.foggetti@gmail.com
+    github: https://github.com/FoggettiAntonello
   release_target_date: "2026-11-22"
   delivery_deadline: "2026-11-26"
   generated_date: "2026-11-21"
@@ -20,12 +25,13 @@ release_v1:
   downloads_authorized: false
   publication_stage: "DOPO COLLAUDO E CONTROLLO DEI CONTENUTI"
   static_hosting:
-    provider: "Azure Static Web Apps"
+    provider: "GitHub Pages"
     plan: "Free"
     user_authorized: true
-    deployed: false
-    account: "DA DECIDERE"
-    published_url: "DA DECIDERE"
+    deployed: true
+    account: "FoggettiAntonello"
+    published_url: "https://foggettiantonello.github.io/#progetti"
+    azure_status: "RINVIATO - SOTTOSCRIZIONE NON ATTIVATA"
   sources:
     - {id: "hourly_pilot", title: "Primo pilota orario", kind: "hourly", directory: "reports/hourly_pilot_20261114", period: "Novembre 2024–ottobre 2026; giorno 15", unit: "MW"}
     - {id: "hourly_extension", title: "Verifica su nuove giornate", kind: "hourly", directory: "reports/hourly_extension_20261114", period: "Novembre 2024–ottobre 2026; giorni 1, 8, 22", unit: "MW"}

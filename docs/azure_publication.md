@@ -1,5 +1,10 @@
 # Pubblicazione del portfolio su Azure
 
+**Aggiornamento 22 novembre:** Azure rinviato perché la verifica della carta
+non è stata completata. Nessuna risorsa Azure creata. La presentazione è ora
+pubblicata su [GitHub Pages](https://foggettiantonello.github.io/#progetti),
+con PDF e PowerPoint. Le istruzioni seguenti restano un piano futuro.
+
 Scelta approvata dall'utente il 21 novembre 2026: sito statico su **Azure
 Static Web Apps, piano Free**, dopo il collaudo del progetto e i controlli
 di pubblicazione. Nessuna risorsa Azure è stata ancora creata.

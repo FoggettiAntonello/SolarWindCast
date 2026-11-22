@@ -1,0 +1,44 @@
+{
+  "date": "2026-11-22",
+  "site": "https://foggettiantonello.github.io/#progetti",
+  "site_commit": "e6fec313dbf2ec01cef8d4fc7cc23ec969270da6",
+  "pages_run": "https://github.com/FoggettiAntonello/FoggettiAntonello.github.io/actions/runs/45047981562",
+  "pages_status": "success",
+  "existing_html_preserved": true,
+  "added_html_lines": 44,
+  "original_projects_preserved": 3,
+  "new_projects": 1,
+  "powerpoint_slides": 13,
+  "native_charts_unchanged": 9,
+  "embedded_workbooks_unchanged": 9,
+  "presenter": {
+    "name": "Antonello Foggetti",
+    "email": "antonello.foggetti@gmail.com",
+    "github": "https://github.com/FoggettiAntonello"
+  },
+  "public_documents": {
+    "pdf": {
+      "url": "https://foggettiantonello.github.io/documents/solarwindcast/PresentazioneSolarWindCast.pdf",
+      "status": 200,
+      "sha256": "1bc89baaca84f71e593321c297b2911ba07c2dcf45dc70418b4f82b5fcedc166",
+      "download_hash_matches": true
+    },
+    "pptx": {
+      "url": "https://foggettiantonello.github.io/documents/solarwindcast/PresentazioneSolarWindCast.pptx",
+      "status": 200,
+      "sha256": "dfdb85878d753b0c8671493712954b86795964d37bc5dd59131371fb82c74298",
+      "download_hash_matches": true
+    }
+  },
+  "tests": {
+    "passed": 380,
+    "skipped": 1,
+    "ruff": "pass",
+    "pip_check": "pass"
+  },
+  "scientific_metrics_unchanged": true,
+  "new_inferences": 0,
+  "new_fits": 0,
+  "azure_deployed": false,
+  "release_finalized": false
+}

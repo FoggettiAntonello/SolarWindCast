@@ -83,6 +83,25 @@ contano più di risultati spettacolari.
 
 ## Metodo di lavoro
 
+22 novembre: utente conferma antonello.foggetti@gmail.com e autorizza la
+slide autore e l’inserimento sul sito personale. PowerPoint aggiornato a
+13 slide (12 di progetto + contatti), PDF esportato da Office. Nuovo SHA256:
+dfdb85878d753b0c8671493712954b86795964d37bc5dd59131371fb82c74298.
+Nove XML dei grafici e nove workbook identici all’originale; testi scientifici
+invariati,solo contatori aggiornati. Metriche JSON intatte. PowerPoint e PDF
+riaperti/esportati con Office; slide autore verificata visivamente.
+Sito personale: quarta scheda SolarWindCast, senza sostituire Sports. Solo
+44 righe aggiunte e due documenti; rimuovendo il nuovo blocco si recupera
+l’HTML precedente byte per byte. Commit sito e6fec31; Pages superato:
+https://github.com/FoggettiAntonello/FoggettiAntonello.github.io/actions/runs/45047981562
+Homepage e documenti pubblici HTTP200; hash PDF/PPT coincidono con le copie
+locali. Verifiche layout desktop e mobile390px senza overflow, link leggibili.
+Azure non attivato per verifica carta; nessuna risorsa cloud Azure creata.
+GitHub Pages usato per la presentazione, senza inferenze cloud.380 test passati,
+uno escluso,pip/Ruff puliti. Nessuna nuova inferenza o fit. Resoconto:
+docs/portfolio_site_update_20261122.html/.json. Release finale ancora da chiudere.
+
+
 22 novembre: primo push pubblico concluso (c22d2be), clone GitHub verificato:
 380 test passati,uno opzionale escluso,pip/Ruff puliti,audit e sito validi.
 Prima CI Windows/Python3.12.10/PyTorchCPU da Internet SUPERATA; log confermano

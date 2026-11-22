@@ -8,7 +8,9 @@ coincide con la sola Puglia.
 in MWh e un percorso sperimentale sulle prossime 24 ore in MW. I risultati
 sono retrospettivi, su dati revisionati: non una soluzione operativa certificata.
 
-[Apri la presentazione principale](docs/portfolio/index.html) ·
+[SolarWindCast sul sito personale](https://foggettiantonello.github.io/#progetti) ·
+[Presentazione PDF online](https://foggettiantonello.github.io/documents/solarwindcast/PresentazioneSolarWindCast.pdf) ·
+[Presentazione HTML locale](docs/portfolio/index.html) ·
 [Copia PowerPoint](docs/portfolio/PresentazioneSolarWindCast.pptx) ·
 [Metriche aggregate complete](docs/portfolio/metrics.json) ·
 [Configurazione](configs/project.yaml) · [Avanzamento](PROGRESS.md)
@@ -18,11 +20,12 @@ affiancati. Le frecce permettono di avanzare; i confronti completi sono in un
 [approfondimento separato](docs/portfolio/details.html#complete).
 Mappa regionale, sfondo sobrio e illustrazioni delle fonti sono incorporati:
 non servono immagini remote. [Provenienza e licenza della mappa](docs/licenses/geographic_visual.md).
-La copia PowerPoint usa le stesse dodici slide, con sole e pale eoliche sullo
-sfondo e grafici/tabelle modificabili. [Come rigenerarla](docs/powerpoint_export.md).
+La copia PowerPoint contiene le dodici slide del progetto e una tredicesima
+slide con autore e contatti. Conserva sole e pale eoliche sullo sfondo e
+grafici/tabelle modificabili. [Versione PDF](docs/portfolio/PresentazioneSolarWindCast.pdf). [Come rigenerarla](docs/powerpoint_export.md).
 La pagina è autonoma e si può aprire localmente nel browser. I file HTML
-su GitHub vanno scaricati/aperti localmente; la pubblicazione di un sito non
-è ancora stata eseguita.
+su GitHub vanno scaricati/aperti localmente. Il sito personale ospita la
+presentazione PDF e il download PowerPoint, entrambi con tredici slide.
 
 ## Risultati in evidenza
 
@@ -156,10 +159,11 @@ Il 22 novembre 2026 la [pipeline GitHub Actions](https://github.com/FoggettiAnto
 ha superato installazione CPU da Internet, 380 test (uno opzionale escluso),
 pip check, Ruff, demo senza pesi e audit del sito. Anche il clone da GitHub
 è stato verificato localmente. [Resoconto](docs/github_publication_20261122.html).
-Azure e la release finale restano da completare.
+La presentazione è pubblicata sul sito personale tramite GitHub Pages.
+Azure è rinviato: nessuna risorsa Azure attivata. La release finale resta da chiudere.
 
 [Controllo dei file, pacchetto del sito e autenticazione](docs/publication.md).
 
-L'utente ha scelto la pubblicazione della presentazione su Azure Static Web Apps
-Free: [piano di pubblicazione](docs/azure_publication.md). Sito non ancora online;
-il cloud ospiterà risultati già calcolati, senza eseguire Timestral.
+Il piano Azure Static Web Apps Free è [documentato ma rinviato](docs/azure_publication.md).
+La pubblicazione corrente usa GitHub Pages e ospita documenti già calcolati,
+senza eseguire Timestral nel cloud. [Verifica del sito](docs/portfolio_site_update_20261122.html).

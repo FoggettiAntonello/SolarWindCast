@@ -1,7 +1,8 @@
 # Copia PowerPoint della presentazione
 
 La copia richiesta e' [PresentazioneSolarWindCast.pptx](portfolio/PresentazioneSolarWindCast.pptx).
-Mantiene le dodici slide dell'[HTML](portfolio/index.html), con lo stesso
+Mantiene le dodici slide dell'[HTML](portfolio/index.html) e aggiunge una
+tredicesima slide con autore e contatti, con lo stesso
 sfondo decorativo di sole e pale eoliche. Testi, tabelle e grafici sono nativi
 e modificabili; mappa e illustrazioni delle fonti sono immagini incorporate.
 Per le coperture, il PowerPoint usa una serie grigia nominale al posto dei
@@ -38,3 +39,17 @@ download energetico o fit e' coinvolto.
 Provenienza delle immagini: [mappa regionale](licenses/geographic_visual.md)
 e [sfondo generato](licenses/presentation_background.md). Citazioni e limiti
 sono conservati anche nelle note del relatore.
+
+## Slide autore aggiunta il 22 novembre
+
+Email confermata: antonello.foggetti@gmail.com. Profilo GitHub: FoggettiAntonello.
+La copia finale ha tredici slide e una [versione PDF](portfolio/PresentazioneSolarWindCast.pdf).
+I nove grafici e tutti i workbook incorporati sono identici alla versione
+a dodici slide. Cambiano solo i contatori e la slide autore. Nessun risultato
+scientifico modificato. Azure non viene dichiarato operativo.
+
+Per riprodurre l’aggiunta, generare prima una nuova copia da dodici slide con
+i comandi sopra, poi usare `scripts/add_presenter_slide.ps1` con destinazione
+nuova e parametri SourcePath, OutputPath, PreviewDirectory, PresenterName,
+Email, GitHubUrl e RepositoryUrl. Finalizzare con `powerpoint_outline
+--finalize-pptx` e riaprire il file in PowerPoint per il controllo visivo.
