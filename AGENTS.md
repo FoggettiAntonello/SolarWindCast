@@ -83,6 +83,16 @@ contano più di risultati spettacolari.
 
 ## Metodo di lavoro
 
+22 novembre, successiva richiesta esplicita: slide autore spostata dalla
+posizione13 alla1 e foto fornita dall’utente incorporata senza ritagli né
+deformazioni.13slide totali,12scientifiche nello stesso ordine.9grafici e
+9workbook identici byte per byte; testi scientifici invariati. PowerPoint/PDF
+rigenerati e copertina renderizzata con Office, verificata visivamente.
+Nuovo SHA256PPT: 5cc00e8d0505b729fe1d2cbee7652b78a79fc9b5496d1a5542abe3c2a5a3dd77.
+Pubblicazione delle sole due copie documento in corso; homepage non modificata.
+Metriche invariate,zero inferenze/fit. Release finale ancora da chiudere.
+
+
 22 novembre: utente conferma antonello.foggetti@gmail.com e autorizza la
 slide autore e l’inserimento sul sito personale. PowerPoint aggiornato a
 13 slide (12 di progetto + contatti), PDF esportato da Office. Nuovo SHA256:

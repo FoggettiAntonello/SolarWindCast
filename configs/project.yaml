@@ -4,7 +4,7 @@
 schema_version: 1
 
 release_v1:
-  frozen_powerpoint_sha256: "dfdb85878d753b0c8671493712954b86795964d37bc5dd59131371fb82c74298"
+  frozen_powerpoint_sha256: "5cc00e8d0505b729fe1d2cbee7652b78a79fc9b5496d1a5542abe3c2a5a3dd77"
   status: "GITHUB E SITO PERSONALE PUBBLICATI - PRESENTAZIONE 13 SLIDE"
   github_repository: https://github.com/FoggettiAntonello/SolarWindCast
   project_license: MIT
@@ -12,6 +12,8 @@ release_v1:
   presentation_max_slides: 13
   presentation_slide_count: 12
   powerpoint_slide_count: 13
+  powerpoint_presenter_first: true
+  powerpoint_portrait_embedded: true
   presenter:
     name: Antonello Foggetti
     email: antonello.foggetti@gmail.com

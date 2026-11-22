@@ -20,8 +20,8 @@ affiancati. Le frecce permettono di avanzare; i confronti completi sono in un
 [approfondimento separato](docs/portfolio/details.html#complete).
 Mappa regionale, sfondo sobrio e illustrazioni delle fonti sono incorporati:
 non servono immagini remote. [Provenienza e licenza della mappa](docs/licenses/geographic_visual.md).
-La copia PowerPoint contiene le dodici slide del progetto e una tredicesima
-slide con autore e contatti. Conserva sole e pale eoliche sullo sfondo e
+La copia PowerPoint apre con autore, foto e contatti, seguiti dalle dodici
+slide del progetto: tredici slide in totale. Conserva sole e pale eoliche sullo sfondo e
 grafici/tabelle modificabili. [Versione PDF](docs/portfolio/PresentazioneSolarWindCast.pdf). [Come rigenerarla](docs/powerpoint_export.md).
 La pagina è autonoma e si può aprire localmente nel browser. I file HTML
 su GitHub vanno scaricati/aperti localmente. Il sito personale ospita la

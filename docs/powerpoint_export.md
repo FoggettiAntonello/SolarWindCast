@@ -53,3 +53,16 @@ i comandi sopra, poi usare `scripts/add_presenter_slide.ps1` con destinazione
 nuova e parametri SourcePath, OutputPath, PreviewDirectory, PresenterName,
 Email, GitHubUrl e RepositoryUrl. Finalizzare con `powerpoint_outline
 --finalize-pptx` e riaprire il file in PowerPoint per il controllo visivo.
+
+## Copertina personale con foto
+
+Il 22 novembre l’utente ha richiesto di portare la slide autore all’inizio e
+ha fornito il ritratto da incorporare. Restano tredici slide: autore prima,
+poi le dodici scientifiche nello stesso ordine. Foto originale incorporata
+senza ritagli o deformazioni, nessun percorso privato nel pacchetto.
+
+`add_presenter_slide.ps1` accetta ora anche una presentazione da tredici
+slide con email autore già presente. Il parametro facoltativo `-PortraitPath`
+indica la foto originale dell’autore. La slide personale viene spostata
+all’inizio e i contatori aggiornati. Per rigenerare da zero si può partire
+dalle dodici slide esportate dall’HTML. Destinazione sempre nuova.
