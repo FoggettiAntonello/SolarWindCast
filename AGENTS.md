@@ -83,6 +83,14 @@ contano più di risultati spettacolari.
 
 ## Metodo di lavoro
 
+23 novembre: utente autorizza la chiusura della release v1.0.0. Note in
+docs/release_v1.0.0.md; README aggiornato alla versione e perimetro congelato.
+Tag e release verranno pubblicati solo dopo la verifica del commit finale.
+Allegati previsti: PDF,PowerPoint,metriche aggregate e checksum; nessun dato
+energetico,peso o segreto. Nessun nuovo esperimento o fit. Azure rinviato,
+GitHub Pages operativo. Pubblicazione release non ancora eseguita qui.
+
+
 22 novembre: revisione README richiesta dall’utente come base precisa per un
 futuro post LinkedIn. README remoto confrontato con quello locale prima delle
 modifiche. Documentate11dipendenze dirette,6opzionali,2transitive dei checkpoint,

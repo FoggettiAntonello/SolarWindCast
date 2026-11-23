@@ -5,7 +5,7 @@ schema_version: 1
 
 release_v1:
   frozen_powerpoint_sha256: "5cc00e8d0505b729fe1d2cbee7652b78a79fc9b5496d1a5542abe3c2a5a3dd77"
-  status: "GITHUB E SITO PERSONALE PUBBLICATI - PRESENTAZIONE 13 SLIDE"
+  status: "VERSIONE 1.0.0 - PERIMETRO CONGELATO"
   github_repository: https://github.com/FoggettiAntonello/SolarWindCast
   project_license: MIT
   presentation_format: "html_slides"
@@ -18,14 +18,16 @@ release_v1:
     name: Antonello Foggetti
     email: antonello.foggetti@gmail.com
     github: https://github.com/FoggettiAntonello
-  release_target_date: "2026-11-22"
+  release_target_date: "2026-11-23"
+  release_tag: "v1.0.0"
+  release_url: "https://github.com/FoggettiAntonello/SolarWindCast/releases/tag/v1.0.0"
   delivery_deadline: "2026-11-26"
   generated_date: "2026-11-21"
   output_directory: "docs/portfolio"
   new_experiments_authorized: false
   new_inference_budget: 0
   downloads_authorized: false
-  publication_stage: "DOPO COLLAUDO E CONTROLLO DEI CONTENUTI"
+  publication_stage: "VERSIONE 1.0.0 - CONTROLLI DI RILASCIO"
   static_hosting:
     provider: "GitHub Pages"
     plan: "Free"

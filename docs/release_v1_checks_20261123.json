@@ -1,0 +1,27 @@
+{
+  "date": "2026-11-23",
+  "scope": "v1.0.0 release candidate before publication",
+  "release_tag": "v1.0.0",
+  "release_url": "https://github.com/FoggettiAntonello/SolarWindCast/releases/tag/v1.0.0",
+  "published": false,
+  "local_checks": {
+    "tests_passed": 380,
+    "tests_skipped": 1,
+    "pip_check": "pass",
+    "ruff": "pass",
+    "baseline_demo": "pass",
+    "public_audit": "pass",
+    "site_broken_links": 0
+  },
+  "remote_ci": "pending on final candidate",
+  "release_assets_sha256": {
+    "metrics.json": "b87e7fdd4f7329d2a89736dede939b78ebd386e205dc66c1978c7915f283d460",
+    "PresentazioneSolarWindCast.pdf": "a1990d568467fee7375ae32e11c950a0202724f1dbcff7bf090c9d8bc3990d71",
+    "PresentazioneSolarWindCast.pptx": "5cc00e8d0505b729fe1d2cbee7652b78a79fc9b5496d1a5542abe3c2a5a3dd77"
+  },
+  "scientific_metrics_unchanged": true,
+  "new_inferences": 0,
+  "new_fits": 0,
+  "new_energy_downloads": 0,
+  "azure_deployed": false
+}

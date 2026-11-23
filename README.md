@@ -4,7 +4,7 @@ Previsioni probabilistiche della produzione solare ed eolica della zona di
 mercato **Sud Italia**, con Timestral e baseline semplici. La zona Sud non
 coincide con la sola Puglia.
 
-**Versione 1.0 in preparazione.** Il progetto comprende una valutazione mensile
+**Versione 1.0.0.** Il progetto comprende una valutazione mensile
 in MWh e un percorso sperimentale sulle prossime 24 ore in MW. I risultati
 sono retrospettivi, su dati revisionati: non una soluzione operativa certificata.
 
@@ -277,7 +277,9 @@ ha superato installazione CPU da Internet, 380 test (uno opzionale escluso),
 pip check, Ruff, demo senza pesi e audit del sito. Anche il clone da GitHub
 è stato verificato localmente. [Resoconto](docs/github_publication_20261122.html).
 La presentazione è pubblicata sul sito personale tramite GitHub Pages.
-Azure è rinviato: nessuna risorsa Azure attivata. La release finale resta da chiudere.
+Azure è rinviato: nessuna risorsa Azure attivata.
+[Release v1.0.0](https://github.com/FoggettiAntonello/SolarWindCast/releases/tag/v1.0.0) ·
+[Note della versione](docs/release_v1.0.0.md).
 
 [Controllo dei file, pacchetto del sito e autenticazione](docs/publication.md).
 
