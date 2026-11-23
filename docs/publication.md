@@ -91,3 +91,12 @@ Fonti ufficiali consultate il 22 novembre 2026:
 ## Esito effettivo del 22 novembre
 
 Repository pubblico [FoggettiAntonello/SolarWindCast](https://github.com/FoggettiAntonello/SolarWindCast), licenza MIT approvata. Primo [CI CPU da Internet](https://github.com/FoggettiAntonello/SolarWindCast/actions/runs/45040562965) superato: 380 test passati, uno escluso, demo/audit/sito validi. Anche il clone GitHub supera i controlli. Azure ancora da pubblicare.
+
+## Release ufficiale del 23 novembre
+
+[v1.0.0](https://github.com/FoggettiAntonello/SolarWindCast/releases/tag/v1.0.0)
+è pubblicata sul commit `7f10b1e4d7fcaa650c04eb9cbe73883c01ee92e1`, dopo il
+CI esatto superato e la verifica del clone. Allegati PDF, PPTX, metriche e
+checksum scaricati pubblicamente e verificati. [Resoconto](release_v1_checks_20261123.html).
+GitHub Pages resta l’hosting dei documenti; Azure è rinviato. Gli aggiornamenti
+documentali successivi al tag registrano l’esito effettivo della pubblicazione.

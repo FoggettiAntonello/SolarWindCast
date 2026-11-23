@@ -5,7 +5,7 @@ schema_version: 1
 
 release_v1:
   frozen_powerpoint_sha256: "5cc00e8d0505b729fe1d2cbee7652b78a79fc9b5496d1a5542abe3c2a5a3dd77"
-  status: "VERSIONE 1.0.0 - PERIMETRO CONGELATO"
+  status: "PUBBLICATA - V1.0.0 PORTFOLIO"
   github_repository: https://github.com/FoggettiAntonello/SolarWindCast
   project_license: MIT
   presentation_format: "html_slides"
@@ -27,7 +27,7 @@ release_v1:
   new_experiments_authorized: false
   new_inference_budget: 0
   downloads_authorized: false
-  publication_stage: "VERSIONE 1.0.0 - CONTROLLI DI RILASCIO"
+  publication_stage: "RELEASE PUBBLICATA E VERIFICATA"
   static_hosting:
     provider: "GitHub Pages"
     plan: "Free"

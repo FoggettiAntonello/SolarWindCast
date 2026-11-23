@@ -4,6 +4,24 @@ Ultimo aggiornamento: 23 novembre 2026.
 
 ## Stato corrente
 
+23 novembre: RELEASE UFFICIALE v1.0.0 PUBBLICATA E VERIFICATA.
+URL: https://github.com/FoggettiAntonello/SolarWindCast/releases/tag/v1.0.0
+Tag sul commit congelato 7f10b1e4d7fcaa650c04eb9cbe73883c01ee92e1.
+CI esatta superata: https://github.com/FoggettiAntonello/SolarWindCast/actions/runs/45245205817
+380 test passati,uno opzionale escluso,pip/Ruff puliti; demo senza pesi e
+pubblicazione controllata. Clone pubblico dello stesso commit: audit/demo
+riusciti. PDF,PPTX,metrics.json e SHA256SUMS pubblicati:4download anonimi
+verificati SHA256. Nessun dato originale,peso,token,venv o archivio privato.
+README identifica v1.0.0,versione pacchetto1.0.0. Stato finale e prove in
+docs/release_v1_checks_20261123.html/.json;note docs/release_v1.0.0.md.
+Perimetro portfolio v1 completato. Step14 fatto per HTML/PPT/PDF e documenti;
+Step13,Streamlit,meteo nei confronti,fine tuning e Azure rinviati. Nessuna
+superiorità generale o promozione operativa dichiarata. Metriche e presentazione
+invariate;zero nuove inferenze/fit/acquisizioni energetiche. Gli aggiornamenti
+successivi al tag registrano soltanto la ricevuta e lo stato della pubblicazione.
+Nessun post LinkedIn o invio di curriculum eseguito.
+
+
 23 novembre: utente autorizza la chiusura della release v1.0.0. Note in
 docs/release_v1.0.0.md; README aggiornato alla versione e perimetro congelato.
 Tag e release verranno pubblicati solo dopo la verifica del commit finale.
@@ -1655,12 +1673,12 @@ Aggiornamento 6 novembre 2026:
 | 6 | Baseline e metriche puntuali/probabilistiche | fatto |
 | 7 | Wrapper Timestral e prova sintetica | fatto |
 | 8 | Backtest rolling origin su dati sintetici | fatto |
-| 9 | Qualità e README locali; GitHub Actions rinviato | fatto |
+| 9 | Qualità, README e GitHub Actions Windows/CPU | fatto |
 | 10 | Dati reali e decisione dei parametri | fatto |
 | 11 | Esperimenti mensili solare/eolico; varianti meteo rinviate | fatto |
 | 12 | Consumi, carico residuo e previsioni ufficiali | fatto |
 | 13 | Confronto con altri modelli | rinviato alla versione successiva |
-| 14 | Presentazione HTML e documentazione finale; Streamlit rinviato | da fare, dopo riesame dei risultati |
+| 14 | Presentazioni HTML/PPT/PDF, documentazione e release v1.0.0; Streamlit rinviato | fatto |
 
 Fase A: Step 0–9.
 Punto di controllo obbligatorio: pipeline completa su dati
