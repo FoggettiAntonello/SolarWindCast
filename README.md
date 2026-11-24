@@ -13,7 +13,7 @@ sono retrospettivi, su dati revisionati: non una soluzione operativa certificata
 [Presentazione HTML locale](docs/portfolio/index.html) ·
 [Copia PowerPoint](docs/portfolio/PresentazioneSolarWindCast.pptx) ·
 [Metriche aggregate complete](docs/portfolio/metrics.json) ·
-[Configurazione](configs/project.yaml) · [Avanzamento](PROGRESS.md)
+[Configurazione](configs/project.yaml) · [Verifiche tecniche](docs/validation.md)
 
 La presentazione HTML comprende **12 slide**, con testo e grafico o tabella
 affiancati. Le frecce permettono di avanzare; i confronti completi sono in un
@@ -69,7 +69,7 @@ pesi 5M già in cache, non scaricati automaticamente dalla demo.
 ha usato una nuova venv Windows/Python 3.12.10, dipendenze reinstallate da
 wheel locali e PyTorch cu128. Il 22 novembre anche il percorso **CPU con
 installazione da Internet** ha superato test, demo e audit su GitHub Actions.
-[Collaudo locale](docs/release_setup_validation.html) ·
+[Collaudo locale](docs/validation.md#setup) ·
 [CI del progetto aggiornato](https://github.com/FoggettiAntonello/SolarWindCast/actions/runs/45051464976).
 
 ## Pipeline implementata
@@ -256,7 +256,7 @@ AWS, Docker e Kubernetes non sono componenti dell'esecuzione di questa versione.
 - [docs/](docs/): metodo e documentazione; [scripts/check.ps1](scripts/check.ps1): qualità locale.
 - Dati e report sperimentali completi restano locali; archivio precedente conservato.
 
-[Pulizia finale e motivi delle cartelle conservate](docs/cleanup_20261121.html).
+[Perimetro pubblico e archivi locali](docs/validation.md#archivi-e-dati).
 Prototipi superati e output dimostrativi sono stati rimossi dalle cartelle attive;
 le prove storiche necessarie sono conservate in archivi compressi locali.
 
@@ -275,7 +275,7 @@ Repository pubblico: [FoggettiAntonello/SolarWindCast](https://github.com/Fogget
 Il 22 novembre 2026 la [pipeline GitHub Actions](https://github.com/FoggettiAntonello/SolarWindCast/actions/runs/45040562965)
 ha superato installazione CPU da Internet, 380 test (uno opzionale escluso),
 pip check, Ruff, demo senza pesi e audit del sito. Anche il clone da GitHub
-è stato verificato localmente. [Resoconto](docs/github_publication_20261122.html).
+è stato verificato localmente. [Verifiche tecniche](docs/validation.md#release).
 La presentazione è pubblicata sul sito personale tramite GitHub Pages.
 Azure è rinviato: nessuna risorsa Azure attivata.
 [Release v1.0.0](https://github.com/FoggettiAntonello/SolarWindCast/releases/tag/v1.0.0) ·
@@ -285,4 +285,4 @@ Azure è rinviato: nessuna risorsa Azure attivata.
 
 Il piano Azure Static Web Apps Free è [documentato ma rinviato](docs/azure_publication.md).
 La pubblicazione corrente usa GitHub Pages e ospita documenti già calcolati,
-senza eseguire Timestral nel cloud. [Verifica del sito](docs/portfolio_site_update_20261122.html).
+senza eseguire Timestral nel cloud. [Sito e allegati](docs/validation.md#sito-e-allegati).

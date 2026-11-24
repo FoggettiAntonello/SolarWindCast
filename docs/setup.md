@@ -17,7 +17,7 @@ Aggiornamento del 22 novembre: il percorso Windows CPU con installazione da
 Internet è stato verificato dalla [pipeline GitHub Actions](https://github.com/FoggettiAntonello/SolarWindCast/actions/runs/45040562965):
 380 test passati, uno opzionale escluso, pip check/Ruff, demo e audit superati.
 La prova GPU locale del 21 novembre resta documentata separatamente nel
-[resoconto del collaudo](release_setup_validation.html).
+[riepilogo del collaudo](validation.md#setup).
 
 ## Ambiente già pronto: percorso usato nella verifica
 

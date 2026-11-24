@@ -9,6 +9,6 @@ I report mantengono anche confronti sfavorevoli e analisi non promosse.
 Originali e pesi non sono redistribuiti qui.
 
 Gli output dimostrativi sono stati rimossi dalle cartelle attive. Il riepilogo
-della demo baseline resta nel [collaudo](../docs/release_setup_validation.html);
+della demo baseline resta nel [collaudo](../docs/validation.md#setup);
 il collaudo sintetico Step 8 è nell'archivio storico locale compresso.
-[Dettagli della pulizia](../docs/cleanup_20261121.html).
+[Perimetro pubblico e archivi locali](../docs/validation.md#archivi-e-dati).

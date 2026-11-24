@@ -115,7 +115,7 @@ sono preparati di nuovo a ogni origine. Frequenza, date, formule, seed e opzioni
 sono nel YAML; nessuno di questi numeri decide gli esperimenti su dati reali.
 
 Il collaudo completo del 5 novembre 2026 è conservato nell'archivio storico
-compresso locale, descritto nel [registro della pulizia](cleanup_20261121.html).
+compresso locale, descritto nel [perimetro degli archivi](validation.md#archivi-e-dati).
 Contiene 144 righe previsionali (6 modelli × 3 finestre × 8 passi).
 Un mancante della baseline stagionale esclude un caso puntuale per tutti:
 23 casi puntuali comuni su 24. Il gruppo probabilistico ha 24 casi comuni su 24.

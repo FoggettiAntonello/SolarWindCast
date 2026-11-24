@@ -10,6 +10,7 @@ import pytest
 import yaml
 
 from solarwindcast.publication import (
+    PRIVATE_FILES,
     audit,
     contains_credential,
     guide,
@@ -51,6 +52,26 @@ def test_release_requires_license_and_rejects_changed_frozen_file(tmp_path: Path
     assert any(f['rule'] == 'project_license_missing' for f in audit(tmp_path, True)['findings'])
     (tmp_path/'docs/portfolio/PresentazioneSolarWindCast.pptx').write_bytes(b'changed')
     assert not audit(tmp_path)['powerpoint_frozen']
+
+
+def test_internal_records_stay_private_and_cannot_be_tracked(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    """Keep local internal records out of publication and detect accidental tracking."""
+    fixture_root(tmp_path)
+    for name in PRIVATE_FILES:
+        path = tmp_path/name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text('Internal collaboration record', encoding='utf-8')
+    intended = {path.relative_to(tmp_path).as_posix() for path in public_files(tmp_path)}
+    assert intended.isdisjoint(PRIVATE_FILES)
+    assert 'README.md' in intended
+    assert audit(tmp_path)['status'] == 'pass'
+    (tmp_path/'.git').mkdir()
+    inventory = b'README.md\0PROGRESS.md\0docs/release_checks_20261122.html\0'
+    monkeypatch.setattr('solarwindcast.publication.subprocess.run',
+                        lambda *args, **kwargs: SimpleNamespace(returncode=0, stdout=inventory))
+    findings = audit(tmp_path)['findings']
+    assert {'file': 'PROGRESS.md', 'rule': 'unexpected_tracked_file'} in findings
+    assert {'file': 'docs/release_checks_20261122.html', 'rule': 'unexpected_tracked_file'} in findings
 
 
 def test_secret_in_compressed_office_xml_is_detected(tmp_path: Path) -> None:

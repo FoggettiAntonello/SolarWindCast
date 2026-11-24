@@ -22,6 +22,29 @@ htmlcov/
 build/
 dist/
 
+# Materiale personale e bozze locali: CV, post e immagini LinkedIn
+/output/
+/C_V_Antonello_Foggetti_EN.pdf
+/C_V_Antonello_Foggetti_IT.pdf
+
+# Registri interni: conservati localmente, esclusi dal repository pubblico
+/AGENTS.md
+/PROGRESS.md
+/docs/cleanup_20261121.html
+/docs/cleanup_20261121.json
+/docs/github_publication_20261122.html
+/docs/github_publication_20261122.json
+/docs/portfolio_site_update_20261122.html
+/docs/portfolio_site_update_20261122.json
+/docs/readme_review_20261122.html
+/docs/readme_review_20261122.json
+/docs/release_checks_20261122.html
+/docs/release_checks_20261122.json
+/docs/release_setup_validation.html
+/docs/release_setup_validation.json
+/docs/release_v1_checks_20261123.html
+/docs/release_v1_checks_20261123.json
+
 # Dataset e cache: conserva soltanto cartelle e documentazione
 data/**
 !data/**/

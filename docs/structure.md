@@ -10,7 +10,7 @@ La struttura attiva contiene `configs`, `src/solarwindcast`, `tests`, `scripts`,
 `data`, `docs` e `reports`. La cartella `notebooks`, con sole istruzioni
 obsolete e nessun notebook, è stata rimossa nella pulizia v1. I risultati precedenti sono separati
 in un archivio compresso locale; codice, test e istruzioni obsoleti sono
-stati rimossi. [Pulizia e contenuti conservati](cleanup_20261121.html).
+stati rimossi. [Perimetro pubblico e archivi locali](validation.md#archivi-e-dati).
 
 `configs/project.yaml` è l'unica configurazione del nuovo percorso. I segnaposto
 `DA DECIDERE` non sono valori operativi: il futuro lettore dovrà rifiutarli per

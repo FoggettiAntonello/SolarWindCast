@@ -14,5 +14,4 @@ Ogni file compresso è stato verificato tramite SHA-256 prima della rimozione
 dell'originale. Non estrarre questi archivi sopra il progetto attivo.
 Gli archivi restano locali, esclusi da Git e dal sito Azure.
 
-[Registro dei file e hash](../docs/cleanup_20261121.json) ·
-[Resoconto della pulizia](../docs/cleanup_20261121.html).
+[Perimetro pubblico e archivi locali](../docs/validation.md#archivi-e-dati).

@@ -15,8 +15,16 @@ from zipfile import BadZipFile, ZipFile
 
 import yaml
 
-ROOT_FILES = {'.gitignore', '.gitattributes', '.env.example', 'README.md', 'AGENTS.md', 'PROGRESS.md',
+ROOT_FILES = {'.gitignore', '.gitattributes', '.env.example', 'README.md',
               'pyproject.toml', 'requirements.txt', 'constraints.txt', 'pytest.ini', 'LICENSE', 'NOTICE.md'}
+PRIVATE_FILES = {'AGENTS.md', 'PROGRESS.md'} | {
+    f'docs/{name}.{extension}'
+    for name in ('cleanup_20261121', 'github_publication_20261122',
+                 'portfolio_site_update_20261122', 'readme_review_20261122',
+                 'release_checks_20261122', 'release_setup_validation',
+                 'release_v1_checks_20261123')
+    for extension in ('html', 'json')
+}
 PUBLIC_DIRS = {'.github', 'configs', 'docs', 'scripts', 'src', 'tests'}
 GENERATED = {'__pycache__', '.pytest_cache', '.ruff_cache', '.mypy_cache', 'build', 'dist'}
 SECRET_PATTERN = re.compile(rb'(?:ghp_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{40,}|hf_[A-Za-z0-9]{30,}|sk-[A-Za-z0-9_-]{35,})')
@@ -48,7 +56,8 @@ def public_files(root: Path) -> list[Path]:
             continue
         for path in (root/directory).rglob('*'):
             relative = path.relative_to(root)
-            if (any(p in GENERATED or p.endswith('.egg-info') for p in relative.parts)
+            if (relative.as_posix() in PRIVATE_FILES
+                    or any(p in GENERATED or p.endswith('.egg-info') for p in relative.parts)
                     or path.suffix in {'.pyc', '.pyo'} or not path.is_file()):
                 continue
             result.append(path)

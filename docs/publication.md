@@ -97,6 +97,6 @@ Repository pubblico [FoggettiAntonello/SolarWindCast](https://github.com/Foggett
 [v1.0.0](https://github.com/FoggettiAntonello/SolarWindCast/releases/tag/v1.0.0)
 è pubblicata sul commit `7f10b1e4d7fcaa650c04eb9cbe73883c01ee92e1`, dopo il
 CI esatto superato e la verifica del clone. Allegati PDF, PPTX, metriche e
-checksum scaricati pubblicamente e verificati. [Resoconto](release_v1_checks_20261123.html).
+checksum scaricati pubblicamente e verificati. [Verifiche tecniche](validation.md#release).
 GitHub Pages resta l’hosting dei documenti; Azure è rinviato. Gli aggiornamenti
 documentali successivi al tag registrano l’esito effettivo della pubblicazione.
